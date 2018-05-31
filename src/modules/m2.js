@@ -9,7 +9,7 @@ class Rect {
      } 
 
      sayHelo() {
-         console.log('Hello Hello');
+         console.log('Hello Hello !');
      }
 }
 
