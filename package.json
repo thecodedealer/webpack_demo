@@ -25,7 +25,10 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "angular-ui-router": "^1.0.18",
+    "angularjs": "^0.0.1",
     "babel-polyfill": "^6.26.0",
+    "jquery": "^3.3.1",
     "moment": "^2.22.1"
   }
 }

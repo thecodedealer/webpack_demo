@@ -23,6 +23,10 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@uirouter/core@5.0.19":
+  version "5.0.19"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.19.tgz#fe2888190393a8c92584c354e65ab8322c1b0db4"
+
 "@webassemblyjs/ast@1.5.9":
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.9.tgz#b2770182678691ab4949d593105c15d4074fedb6"
@@ -197,6 +201,16 @@ ajv@^6.1.0:
 alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
+
+angular-ui-router@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/angular-ui-router/-/angular-ui-router-1.0.18.tgz#afc5c2d97d4fc54315db9cb638849cbffcc0a62c"
+  dependencies:
+    "@uirouter/core" "5.0.19"
+
+angularjs@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/angularjs/-/angularjs-0.0.1.tgz#496f50c7141515e741ea976de891def0838b3f19"
 
 ansi-escapes@^1.0.0:
   version "1.4.0"
@@ -3261,6 +3275,10 @@ isurl@^1.0.0-alpha5:
   dependencies:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
+
+jquery@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-base64@^2.1.9:
   version "2.4.5"

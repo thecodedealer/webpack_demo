@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/index.js', './src/styles/app.scss'],
+  entry: ['./src/app.js', './src/styles/app.scss'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
