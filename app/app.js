@@ -12,12 +12,16 @@ require('angular-ui-router');
 
 
 require('./controllers/modules');
+require('./services/modules');
 
+// Bootstrap
+import 'bootstrap';
 
 angular.module('startupApp', [
     // Angular dependecies
     'ui.router',
-    require('./controllers/modules').name
+    require('./controllers/modules').name,
+    require('./services/modules').name
     ])
 
     

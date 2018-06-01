@@ -29,7 +29,10 @@
     "angular-ui-router": "^1.0.18",
     "angularjs": "^0.0.1",
     "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
-    "moment": "^2.22.1"
+    "moment": "^2.22.1",
+    "popper.js": "^1.14.3",
+    "precss": "^3.1.2"
   }
 }
