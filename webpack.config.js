@@ -1,11 +1,12 @@
 var path = require('path');
+var webpack = require('webpack');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/app.js', './src/styles/app.scss'],
+  entry: ['./app/app.js', './app/styles/app.scss'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')

@@ -3,10 +3,12 @@
 // Babel polyfill
 require("babel-polyfill");
 
+// Require jquery
+window.$ = window.jQuery = require('jquery');
+
 // Angular & its modules
-require('jquery');
-import angular from 'angular';
-require("angular-ui-router");
+require('angular');
+require('angular-ui-router');
 
 
 require('./controllers/modules');
@@ -14,8 +16,8 @@ require('./controllers/modules');
 
 angular.module('startupApp', [
     // Angular dependecies
-    'ui.router'
-
+    'ui.router',
+    require('./controllers/modules').name
     ])
 
     
@@ -27,14 +29,14 @@ angular.module('startupApp', [
                 url: '/',
                 views: {
                     'header': {
-                        templateUrl: 'views/header.html'
+                        templateUrl: './views/header.html'
                     },
                     'content': {
-                        templateUrl: 'views/home.html',
+                        templateUrl: './views/home.html',
                         controller: 'IndexCtrl'
                     },
                     'footer': {
-                        templateUrl: 'views/footer.html'
+                        templateUrl: './views/footer.html'
                     }
                 }
         
