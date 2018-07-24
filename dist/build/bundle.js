@@ -90,11 +90,23 @@
 /*!********************!*\
   !*** ./app/app.js ***!
   \********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\n// Babel polyfill\r\n__webpack_require__(/*! babel-polyfill */ \"./node_modules/babel-polyfill/lib/index.js\");\r\n\r\n// Require jquery\r\nwindow.$ = window.jQuery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\r\n\r\n// Angular & its modules\r\n__webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\r\n__webpack_require__(/*! angular-ui-router */ \"./node_modules/angular-ui-router/release/ui-router-angularjs.js\");\r\n\r\n\r\n__webpack_require__(/*! ./controllers/modules */ \"./app/controllers/modules.js\");\r\n__webpack_require__(/*! ./services/modules */ \"./app/services/modules.js\");\r\n\r\n// Bootstrap\r\n\r\n\r\nangular.module('startupApp', [\r\n    // Angular dependecies\r\n    'ui.router',\r\n    __webpack_require__(/*! ./controllers/modules */ \"./app/controllers/modules.js\").name,\r\n    __webpack_require__(/*! ./services/modules */ \"./app/services/modules.js\").name\r\n    ])\r\n\r\n    \r\n    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {\r\n\r\n        $stateProvider\r\n\r\n            .state('index', {\r\n                url: '/',\r\n                views: {\r\n                    'header': {\r\n                        templateUrl: './views/header.html'\r\n                    },\r\n                    'content': {\r\n                        templateUrl: './views/home.html',\r\n                        controller: 'IndexCtrl'\r\n                    },\r\n                    'footer': {\r\n                        templateUrl: './views/footer.html'\r\n                    }\r\n                }\r\n        \r\n            })\r\n\r\n        ;\r\n\r\n        $urlRouterProvider.otherwise('/');\r\n    })\r\n\r\n\r\n;\n\n//# sourceURL=webpack:///./app/app.js?");
+eval("// Babel polyfill\n__webpack_require__(/*! babel-polyfill */ \"./node_modules/babel-polyfill/lib/index.js\");/*\r\n DIRTY DEBUGGING OF UNHANDLED ERRORS\r\n */window.onerror=function(errorMsg,url,lineNumber,column,errorObj){if(window.console){console.log(errorMsg);console.log(url);console.log(lineNumber);console.log(column);console.log(errorObj);}};// Require jquery\nwindow.$=window.jQuery=__webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");// Angular & it's modules\n__webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");__webpack_require__(/*! angular-ui-router */ \"./node_modules/angular-ui-router/release/ui-router-angularjs.js\");//VENDORS\n__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");/*\r\n* INIT ANGULAR APP\r\n* */window.app=angular.module('startupApp',[/*\r\n    Angular dependencies\r\n    */'ui.router',/*\r\n    Custom dependencies\r\n    */__webpack_require__(/*! ./controllers/_modules */ \"./app/controllers/_modules.js\").name,__webpack_require__(/*! ./services/_modules */ \"./app/services/_modules.js\").name])/*\r\n    * Angular configuration\r\n    * */.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){$stateProvider.state('index',{url:'/',views:{'header':{templateUrl:'../views/header.html'},'content':{templateUrl:'../views/home.html',controller:'IndexCtrl'},'footer':{templateUrl:'../views/footer.html'}}});$urlRouterProvider.otherwise('/');}]);\n\n//# sourceURL=webpack:///./app/app.js?");
+
+/***/ }),
+
+/***/ "./app/controllers/_modules.js":
+/*!*************************************!*\
+  !*** ./app/controllers/_modules.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("module.exports=angular.module('controllers',[__webpack_require__(/*! ./indexCtrl */ \"./app/controllers/indexCtrl.js\").name]);\n\n//# sourceURL=webpack:///./app/controllers/_modules.js?");
 
 /***/ }),
 
@@ -106,19 +118,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var boot
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\n\r\nmodule.exports = angular.module('IndexCtrl', [])\r\n\r\n    .controller('IndexCtrl', ['$scope', 'dataService', function ($scope, dataService) {\r\n        $scope.homeMsg = \"Home View ! yeeeeeep\";\r\n        $scope.data = dataService;\r\n    }])\r\n\r\n;\n\n//# sourceURL=webpack:///./app/controllers/indexCtrl.js?");
+eval("module.exports=angular.module('IndexCtrl',[]).controller('IndexCtrl',['$scope','dataService',function($scope,dataService){$scope.homeMsg=\"Home View\";$scope.data=dataService;}]);\n\n//# sourceURL=webpack:///./app/controllers/indexCtrl.js?");
 
 /***/ }),
 
-/***/ "./app/controllers/modules.js":
-/*!************************************!*\
-  !*** ./app/controllers/modules.js ***!
-  \************************************/
+/***/ "./app/services/_modules.js":
+/*!**********************************!*\
+  !*** ./app/services/_modules.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\n\r\n__webpack_require__(/*! ./indexCtrl */ \"./app/controllers/indexCtrl.js\");\r\n\r\nmodule.exports = angular.module('controllers', [\r\n    __webpack_require__(/*! ./indexCtrl */ \"./app/controllers/indexCtrl.js\").name\r\n])\r\n;\n\n//# sourceURL=webpack:///./app/controllers/modules.js?");
+eval("module.exports=angular.module('services',[__webpack_require__(/*! ./dataService */ \"./app/services/dataService.js\").name]);\n\n//# sourceURL=webpack:///./app/services/_modules.js?");
 
 /***/ }),
 
@@ -130,19 +142,7 @@ eval("\r\n\r\n__webpack_require__(/*! ./indexCtrl */ \"./app/controllers/indexCt
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\n\r\nmodule.exports = angular.module('dataService', [])\r\n\r\n    .factory('dataService', [function () {\r\n            let data = [\r\n                {\r\n                    name: \"niqei\",\r\n                    age: 12\r\n                },\r\n                {\r\n                    name: \"geana\",\r\n                    age: 13\r\n                },\r\n                {\r\n                    name: \"Dani\",\r\n                    age: 25\r\n                }\r\n            ]\r\n            return data;\r\n    }])\r\n\r\n;\n\n//# sourceURL=webpack:///./app/services/dataService.js?");
-
-/***/ }),
-
-/***/ "./app/services/modules.js":
-/*!*********************************!*\
-  !*** ./app/services/modules.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\r\n\r\n__webpack_require__(/*! ./dataService */ \"./app/services/dataService.js\");\r\n\r\nmodule.exports = angular.module('services', [\r\n    __webpack_require__(/*! ./dataService */ \"./app/services/dataService.js\").name\r\n])\r\n;\n\n//# sourceURL=webpack:///./app/services/modules.js?");
+eval("module.exports=angular.module('dataService',[]).factory('dataService',[function(){return[{name:\"John\",age:12},{name:\"Messi\",age:13},{name:\"Ronaldo\",age:25}];}]);\n\n//# sourceURL=webpack:///./app/services/dataService.js?");
 
 /***/ }),
 
@@ -153,7 +153,7 @@ eval("\r\n\r\n__webpack_require__(/*! ./dataService */ \"./app/services/dataServ
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"/app.css\";\n\n//# sourceURL=webpack:///./app/styles/app.scss?");
+eval("module.exports = __webpack_require__.p + \"/bundle.css\";\n\n//# sourceURL=webpack:///./app/styles/app.scss?");
 
 /***/ }),
 

@@ -2,30 +2,50 @@
 
 // Babel polyfill
 require("babel-polyfill");
+/*
+ DIRTY DEBUGGING OF UNHANDLED ERRORS
+ */
+window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
+    if (window.console) {
+        console.log(errorMsg);
+        console.log(url);
+        console.log(lineNumber);
+        console.log(column);
+        console.log(errorObj);
+    }
+};
 
 // Require jquery
 window.$ = window.jQuery = require('jquery');
 
-// Angular & its modules
+// Angular & it's modules
 require('angular');
 require('angular-ui-router');
 
+//VENDORS
+require('bootstrap');
 
-require('./controllers/modules');
-require('./services/modules');
 
-// Bootstrap
-import 'bootstrap';
-
-angular.module('startupApp', [
-    // Angular dependecies
+/*
+* INIT ANGULAR APP
+* */
+window.app = angular.module('startupApp', [
+    /*
+    Angular dependencies
+    */
     'ui.router',
-    require('./controllers/modules').name,
-    require('./services/modules').name
+
+    /*
+    Custom dependencies
+    */
+    require('./controllers/_modules').name,
+    require('./services/_modules').name
     ])
 
-    
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    /*
+    * Angular configuration
+    * */
+    .config(($stateProvider, $urlRouterProvider) => {
 
         $stateProvider
 
@@ -33,14 +53,14 @@ angular.module('startupApp', [
                 url: '/',
                 views: {
                     'header': {
-                        templateUrl: './views/header.html'
+                        templateUrl: '../views/header.html'
                     },
                     'content': {
-                        templateUrl: './views/home.html',
+                        templateUrl: '../views/home.html',
                         controller: 'IndexCtrl'
                     },
                     'footer': {
-                        templateUrl: './views/footer.html'
+                        templateUrl: '../views/footer.html'
                     }
                 }
         
@@ -50,6 +70,5 @@ angular.module('startupApp', [
 
         $urlRouterProvider.otherwise('/');
     })
-
 
 ;

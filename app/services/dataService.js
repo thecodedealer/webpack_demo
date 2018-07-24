@@ -3,21 +3,20 @@
 module.exports = angular.module('dataService', [])
 
     .factory('dataService', [function () {
-            let data = [
+            return [
                 {
-                    name: "niqei",
+                    name: "John",
                     age: 12
                 },
                 {
-                    name: "geana",
+                    name: "Messi",
                     age: 13
                 },
                 {
-                    name: "Dani",
+                    name: "Ronaldo",
                     age: 25
                 }
-            ]
-            return data;
+            ];
     }])
 
 ;
