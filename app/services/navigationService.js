@@ -5,6 +5,8 @@ module.exports = angular.module('navigationService', [])
         ($log, $location) => {
             class Navigation {
                 constructor() {
+
+                    //Side nav tabs
                     this.sideNav = {
                         'dashboard': {
                             logo: 'dashboard',
@@ -47,6 +49,12 @@ module.exports = angular.module('navigationService', [])
                     let arr = $location.path().split('/');
                     arr[0] = 'home';
                     return arr;
+                }
+
+                toggleSideNav() {
+                    $("body").toggleClass("sidenav-toggled");
+                    $(".navbar-sidenav .nav-link-collapse").addClass("collapsed");
+                    $(".navbar-sidenav .sidenav-second-level, .navbar-sidenav .sidenav-third-level").removeClass("show");
                 }
 
             }

@@ -2,3 +2,20 @@
   text-transform: capitalize;
 }
 
+.main-loader {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+
+  p {
+    font-size: 3rem;
+    color: red;
+  }
+
+  .loader-bg {
+    color: rgba(0, 0, 0, 0.57);
+    width: 100%;
+    height: 100%;
+  }
+}

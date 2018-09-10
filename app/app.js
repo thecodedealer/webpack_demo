@@ -2,9 +2,10 @@
 
 // Babel polyfill
 require("babel-polyfill");
+
 /*
- DIRTY DEBUGGING OF UNHANDLED ERRORS
- */
+    DIRTY DEBUGGING OF UNHANDLED ERRORS
+*/
 window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
     if (window.console) {
         console.log(errorMsg);
@@ -15,9 +16,9 @@ window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
     }
 };
 
-// Require jquery
+// Require jQuery
 window.$ = window.jQuery = require('jquery');
-// Require datatables
+// Require Data Tables
 window.dt = require( 'datatables.net' );
 
 
@@ -32,110 +33,57 @@ require('moment');
 require('../vendor/Chart');
 
 /*
-* INIT ANGULAR APP
-* */
+   ANGULAR APP
+*/
 window.app = angular.module('startupApp', [
     /*
-    Angular dependencies
+        ANGULAR DEPENDENCIES
     */
     'ui.router',
     'ngRoute',
 
 
     /*
-        Custom dependencies
+        CUSTOM DEPENDENCY
     */
-    require('./controllers/_modules').name,
     require('./services/_modules').name,
     require('./components/_modules').name
 ])
-/*
-   VENDORS
-*/
+    /*
+       VENDORS
+    */
     .factory('moment', ['$window', $window => {
         return require('moment');
     }])
 
+    /*
+        ANGULAR CONFIG
+    */
+    .config(['routerServiceProvider',
+        (routerServiceProvider) => {
+            //Init routes
+            routerServiceProvider.init();
+        }
+    ])
+
+    /*
+        INIT ANGULAR APP
+    */
     .run(($transitions, $state, appService, historyService) => {
         console.log('- App is running...');
         appService.state('name', 'Niqei');
 
-        //On state change
+        //On route change
         $transitions.onSuccess({}, () => {
             let currentState = $state.current.name;
             appService.state('currentState', currentState);
 
         });
 
+        //On state change
         appService.onStateChange('currentState', (newState, oldState) => {
             console.log('New State: ' + newState + ' Old state: ' + oldState);
         });
-    })
-    /*
-    * Angular configuration
-    *
-    * */
-    .config(($stateProvider, $urlRouterProvider) => {
-
-        $stateProvider
-
-            .state('index', {
-                url: '/',
-                views: {
-                    'header': {
-                        templateUrl: './views/header.html',
-                        controller: 'NavigationCtrl'
-                    },
-                    'footer': {
-                        templateUrl: './views/footer.html'
-                    }
-                }
-
-            })
-
-            .state('dashboard', {
-                url: '/dashboard',
-                views: {
-                    'header': {
-                        templateUrl: './views/header.html',
-                        controller: 'NavigationCtrl'
-                    },
-                    'content': {
-                        templateUrl: './views/dashboard.html',
-                        controller: 'DashboardCtrl'
-                    }
-                }
-            })
-
-            .state('users', {
-                url: '/users',
-                views: {
-                    'header': {
-                        templateUrl: './views/header.html',
-                        controller: 'NavigationCtrl'
-                    },
-                    'content': {
-                        templateUrl: './views/users.html',
-                        controller: 'UsersCtrl'
-                    }
-                }
-            })
-            .state('users.all', {
-                url: '/all',
-                views: {
-                    'header': {
-                        templateUrl: './views/header.html',
-                        controller: 'NavigationCtrl'
-                    },
-                    'content': {
-                        templateUrl: './views/second.html',
-                        controller: 'UsersCtrl'
-                    }
-                }
-            })
-        ;
-
-        $urlRouterProvider.otherwise('/dashboard');
     })
 
 

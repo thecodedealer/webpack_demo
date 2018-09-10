@@ -8,6 +8,8 @@ module.exports = angular.module('appService', [])
             constructor() {
                 super();
 
+                this.state('showMainLoader', false);
+
             }
 
 

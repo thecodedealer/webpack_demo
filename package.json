@@ -1,13 +1,13 @@
 {
-  "name": "_webpack_DEMO",
-  "version": "1.0.12",
+  "name": "angular_dashboard_demo",
+  "version": "1.0.13",
   "description": "webpack demo project",
   "main": "index.js",
   "author": "Code dealer",
   "license": "MIT",
   "scripts": {
     "dev": "webpack --progress --watch",
-    "build": "webpack --env build --progress"
+    "prod": "webpack --env build --progress"
   },
   "devDependencies": {
     "browser-sync-webpack-plugin": "^2.2.2",
