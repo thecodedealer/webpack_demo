@@ -1,8 +1,15 @@
-
 /*BOOTSTRAP*/
 @import 'bootstrap/scss/bootstrap.scss';
 
-@import "./main";
+/*FONT AWESOME*/
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+/*DATATABLE*/
+@import "./vendor/datatable";
+
+/*SB ADMIN*/
+@import "sb-admin/sb-admin";
 
 /*PARTIALS*/
+@import "./partials/global";
 @import "./partials/header";

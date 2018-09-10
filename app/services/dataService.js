@@ -2,7 +2,7 @@
 
 module.exports = angular.module('dataService', [])
 
-    .factory('dataService', [function () {
+    .factory('dataService', [ () => {
             return [
                 {
                     name: "John",
