@@ -1,10 +1,16 @@
 'use strict';
 
 module.exports = angular.module('navigationService', [])
-    .factory('navigationService', ['$log', '$location',
-        ($log, $location) => {
-            class Navigation {
+    .factory('navigationService', ['$log', '$location', 'abstractService',
+        ($log, $location, abstractService) => {
+            class Navigation extends abstractService{
                 constructor() {
+                    super();
+
+                    /*
+                        States
+                    */
+                    this.state('breadcrumbs', []);
 
                     //Side nav tabs
                     this.sideNav = {
@@ -31,15 +37,19 @@ module.exports = angular.module('navigationService', [])
                     }
 
                 }
-
                 getSideNav() {
                     return this.sideNav;
                 }
 
 
-                getCurrentPath() {
-                    return this._createPathArray();
+
+                /*
+                    BREADCRUMBS
+                */
+                updateBreadcrumbs() {
+                    this.state('breadcrumbs', this._createPathArray());
                 }
+
 
                 /*
                     HELPERS

@@ -62,14 +62,14 @@ window.app = angular.module('startupApp', [
     .config(['routerServiceProvider',
         (routerServiceProvider) => {
             //Init routes
-            routerServiceProvider.init();
+            routerServiceProvider.initRoutes();
         }
     ])
 
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, historyService) => {
+    .run(($transitions, $state, appService, navigationService) => {
         console.log('- App is running...');
         appService.state('name', 'Niqei');
 
@@ -81,8 +81,8 @@ window.app = angular.module('startupApp', [
         });
 
         //On state change
-        appService.onStateChange('currentState', (newState, oldState) => {
-            console.log('New State: ' + newState + ' Old state: ' + oldState);
+        appService.onStateChange('currentState', () => {
+            navigationService.updateBreadcrumbs();
         });
     })
 

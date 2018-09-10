@@ -22,6 +22,7 @@ module.exports = angular.module('cardComponent', [])
         template: `
               <div class="card text-white {{$ctrl.config.cardColor}} o-hidden h-100">
                 <div class="card-body">
+                    <div>{{$ctrl.config.description}}</div>
                     <div class="card-body-icon">
                         <i class="fa fa-fw {{$ctrl.config.cardIcon}}"></i>
                     </div>

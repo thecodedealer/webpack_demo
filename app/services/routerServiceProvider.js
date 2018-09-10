@@ -15,7 +15,7 @@ module.exports = angular.module('routerServiceProvider', [])
                 return new RouterService();
             }];
 
-            this.init = () => {
+            this.initRoutes = () => {
                 $stateProvider
 
                     .state('index', {
