@@ -56,6 +56,10 @@ window.app = angular.module('startupApp', [
         return require('moment');
     }])
 
+    .factory('socket_io', ['$window', $window => {
+        return require('socket.io-client');
+    }])
+
     /*
         ANGULAR CONFIG
     */
@@ -69,9 +73,13 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService) => {
+    .run(($transitions, $state, appService, navigationService, socketService) => {
         console.log('- App is running...');
         appService.state('name', 'Niqei');
+
+        socketService.connect();
+
+        socketService.receive('announcements');
 
         //On route change
         $transitions.onSuccess({}, () => {

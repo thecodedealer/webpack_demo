@@ -83,7 +83,7 @@ const config = {
             // browse to http://localhost:3000/ during development,
             // ./public directory is being served
             host: 'localhost',
-            port: 3000,
+            port: 5000,
             server: {baseDir: ['dist']},
             reload: false
         })

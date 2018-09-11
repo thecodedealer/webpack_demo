@@ -7,6 +7,7 @@ module.exports = angular.module('services', [
     require('./navigationService').name,
     require('./historyService').name,
     require('./chartService').name,
-    require('./dataService').name
+    require('./dataService').name,
+    require('./socketService').name
 ])
 ;
