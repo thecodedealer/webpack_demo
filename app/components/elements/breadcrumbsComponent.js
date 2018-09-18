@@ -16,7 +16,7 @@ module.exports = angular.module('breadcrumbsComponent', [])
                 };
 
             }],
-        template: `
+        template: /*html*/` 
            <ol class="breadcrumb">
                 <li class="breadcrumb-item" ng-repeat="crumb in navigationService.state('breadcrumbs')">
                     <a ui-sref="{{crumb}}" class="capitalize">{{crumb}}</a>

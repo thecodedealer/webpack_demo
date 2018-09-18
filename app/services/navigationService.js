@@ -54,7 +54,6 @@ module.exports = angular.module('navigationService', [])
                 /*
                     HELPERS
                 */
-
                 _createPathArray() {
                     let arr = $location.path().split('/');
                     arr[0] = 'home';

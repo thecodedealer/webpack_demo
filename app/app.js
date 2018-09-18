@@ -31,6 +31,7 @@ require('angular-route');
 require('bootstrap');
 require('moment');
 require('../vendor/Chart');
+require('bootstrap-notify');
 
 /*
    ANGULAR APP
@@ -73,13 +74,15 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService) => {
+    .run(($transitions, $state, appService, navigationService, socketService, messagerService) => {
         console.log('- App is running...');
         appService.state('name', 'Niqei');
 
         socketService.connect();
 
-        socketService.receive('announcements');
+        socketService.receive('announcements', (data) => {
+            messagerService.success(data.message);
+        });
 
         //On route change
         $transitions.onSuccess({}, () => {
@@ -93,6 +96,4 @@ window.app = angular.module('startupApp', [
             navigationService.updateBreadcrumbs();
         });
     })
-
-
 ;

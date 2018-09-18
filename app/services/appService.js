@@ -11,8 +11,6 @@ module.exports = angular.module('appService', [])
                 this.state('showMainLoader', false);
 
             }
-
-
         }
 
         return new AppService();

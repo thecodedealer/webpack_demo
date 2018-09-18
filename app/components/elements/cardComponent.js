@@ -19,7 +19,7 @@ module.exports = angular.module('cardComponent', [])
 
                 };
             }],
-        template: `
+        template: /*html*/ `
               <div class="card text-white {{$ctrl.config.cardColor}} o-hidden h-100">
                 <div class="card-body">
                     <div>{{$ctrl.config.description}}</div>
