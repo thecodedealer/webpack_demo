@@ -37,23 +37,18 @@ module.exports = angular.module('navigationService', [])
                     }
 
                 }
+
+                /*
+                    ACTIONS
+                */
                 getSideNav() {
                     return this.sideNav;
                 }
 
-
-
-                /*
-                    BREADCRUMBS
-                */
                 updateBreadcrumbs() {
                     this.state('breadcrumbs', this._createPathArray());
                 }
 
-
-                /*
-                    HELPERS
-                */
                 _createPathArray() {
                     let arr = $location.path().split('/');
                     arr[0] = 'home';

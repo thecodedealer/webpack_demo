@@ -8,9 +8,34 @@ module.exports = angular.module('appService', [])
             constructor() {
                 super();
 
+                /*
+                    States
+                */
+                this.state('config', {
+                    isOnline: null,
+                    loggedIn: null,
+                    route: null,
+
+                });
                 this.state('showMainLoader', false);
 
+
             }
+
+            /*
+                ACTIONS
+            */
+            boot() {
+
+            }
+
+            checknetworkStatus() {
+
+            }
+
+
+
+
         }
 
         return new AppService();

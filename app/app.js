@@ -26,6 +26,7 @@ window.dt = require( 'datatables.net' );
 require('angular');
 require('angular-ui-router');
 require('angular-route');
+require('angular-resource');
 
 //VENDORS
 require('bootstrap');
@@ -42,6 +43,7 @@ window.app = angular.module('startupApp', [
     */
     'ui.router',
     'ngRoute',
+    'ngResource',
 
 
     /*

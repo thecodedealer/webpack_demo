@@ -9,6 +9,8 @@ module.exports = angular.module('services', [
     require('./chartService').name,
     require('./dataService').name,
     require('./socketService').name,
-    require('./messagerService').name
+    require('./messagerService').name,
+    require('./authService').name,
+    require('./apiService').name,
 ])
 ;

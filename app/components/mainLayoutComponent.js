@@ -245,6 +245,7 @@ module.exports = angular.module('mainLayoutComponent', [])
                         </li>
                     </ul>
                 </div>
+                
             </div>
 		`
     });

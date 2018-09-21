@@ -79,6 +79,8 @@ const config = {
         new CleanWebpackPlugin([jsDir]),
         new CleanWebpackPlugin([cssDir]),
 
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
         new BrowserSyncPlugin({
             // browse to http://localhost:3000/ during development,
             // ./public directory is being served

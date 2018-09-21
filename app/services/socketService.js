@@ -10,8 +10,8 @@ module.exports = angular.module('socketService', [])
             
             $window.socket = {
                 generalLog: socketMasterLog,
-                socketReceivedLog: socketReceivedLog,
-                socketEmitedLog: socketEmitedLog
+                socketWatchingLog: socketReceivedLog,
+                socketEmittingLog: socketEmitedLog
             };
 
             class SocketService extends abstractService{
@@ -39,7 +39,7 @@ module.exports = angular.module('socketService', [])
 
                 //Receive actions from Socket Server
                 receive(name, action) {
-                    $log.log('- Set Socket Action for -> ' + name);
+                    $log.log('- Watch socket for: [' + name + ']');
 
                     // Set Socket IO event for action
                     this.socket.on(name, (data) => {
@@ -52,16 +52,14 @@ module.exports = angular.module('socketService', [])
 
                 //Emit action to Socket Server
                 emit(name, action = {}) {
-                    $log.log(this.socket.connected);
                     if(this.socket.connected) {
-                        $log.log('- Emit socket action -> ' + name + ' -> data: '+ JSON.stringify(action));
+                        $log.log('- Emit socket action: [' + name + ']');
                         this.socket.emit(name, action);
                         this._addToStack(name, action, 'emited');
                     }
                     else {
                         $log.log('- Socket is disconnected.')
                     }
-
                 }
                 
                 /*

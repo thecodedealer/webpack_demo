@@ -6,14 +6,14 @@ module.exports = angular.module('messagerService', [])
             let all = [];
             let alert = [];
             let error = [];
-            let warn = [];
+            let info = [];
 
             window.messagerLog = {
                 all: all,
                 alert: alert,
                 error: error,
-                warn: warn
-            }
+                info: info
+            };
             class MessagerService {
                 constructor() {
 
@@ -30,6 +30,8 @@ module.exports = angular.module('messagerService', [])
                     }, {
                         type: 'success'
                     });
+
+                    this._log('success', message, 'info');
                 }
 
                 /* 
@@ -37,23 +39,23 @@ module.exports = angular.module('messagerService', [])
                 */
                 _log(type, message, category) {
                     switch (category) {
-                        case 'warn':
+                        case 'alert':
                             alert.push({
                                 type: type,
                                 message: message
-                            })
+                            });
                             break;
                         case 'error':
                             error.push({
                                 type: type,
                                 message: message
-                            })
+                            });
                             break;
-                        case 'alert':
-                            alert.push({
+                        case 'info':
+                            info.push({
                                 type: type,
                                 message: message
-                            })
+                            });
                             break;
 
                     }

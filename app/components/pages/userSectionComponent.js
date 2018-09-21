@@ -1,8 +1,8 @@
 "use strict";
 module.exports = angular.module('userSectionComponent', [])
     .component('userSection', {
-        controller: ['$scope', 'socketService',
-            function ($scope, socketService) {
+        controller: ['$scope', '$log', 'socketService', 'API',
+            function ($scope, $log, socketService, API) {
 
                 /*
                     INJECT SERVICES
@@ -15,16 +15,25 @@ module.exports = angular.module('userSectionComponent', [])
 
                 $scope.emit = () => {
                     socketService.emit('hello', {name: 'user', age: 34});
+                };
+
+                $scope.testRequest = () => {
+                    API.test('http://localhost:3000').get().$promise
+                        .then(data => $log.log(data))
+                        .catch(err => $log.error(err))
                 }
             }],
         template: `
-            <div class="container-fluid">
-                <breadcrumbs></breadcrumbs>
+            <div>
+               
                  <br>
                  <a ui-sref="users.all">Users All</a>
                  
                  
                  <button ng-click="emit()" class="btn-danger">Emit Socket event</button>
+                 <br>
+                 <button ng-click="testRequest()" class="btn-danger">Send request</button>
+                 
             </div>
 		`
     });
