@@ -28,7 +28,10 @@ module.exports = angular.module('cardComponent', [])
                     <div class="mr-5">{{$ctrl.config.cardName}}</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
-                    <span class="float-left">View Details</span>
+                    <span class="float-left" ng-click="dashboardService.updateCard($ctrl.config.action)">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
+                    <span class="float-left" style="margin-left: 10px">View Details</span>
                     <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>

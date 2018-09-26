@@ -1,20 +1,20 @@
 'use strict';
 
-module.exports = angular.module('messagerService', [])
-    .factory('messagerService', ['abstractService',
+module.exports = angular.module('messengerService', [])
+    .factory('messengerService', ['abstractService',
         (abstractService) => {
             let all = [];
             let alert = [];
             let error = [];
             let info = [];
 
-            window.messagerLog = {
+            window.messengerLog = {
                 all: all,
                 alert: alert,
                 error: error,
                 info: info
             };
-            class MessagerService {
+            class MessengerService {
                 constructor() {
 
                 }
@@ -25,7 +25,7 @@ module.exports = angular.module('messagerService', [])
                 */
                 success(message) {
                     $.notify({
-                        title: '<strong>Heads up!</strong>',
+                        title: '<strong>Success!</strong>',
                         message: message
                     }, {
                         type: 'success'
@@ -71,6 +71,6 @@ module.exports = angular.module('messagerService', [])
 
             }
 
-            return new MessagerService();
+            return new MessengerService();
         }
     ]);

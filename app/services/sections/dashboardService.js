@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('dashboardService', [])
-    .factory('dashboardService', ['$log', 'abstractService', 'API',
-        ($log, abstractService, API) => {
+    .factory('dashboardService', ['$log', 'abstractService', 'API', 'messengerService',
+        ($log, abstractService, API, messengerService) => {
 
             class DashboardService extends abstractService{
                 constructor() {
@@ -45,15 +45,25 @@ module.exports = angular.module('dashboardService', [])
                 }
 
                 updateCard(name) {
-                    API.call('online-users').get().$promise
+                    const update = {};
+
+                    API.call(this._camelCaseToHyphen(name)).get().$promise
                         .then(data => {
-                            this.state('config', {
-                                onlineUsers: data.onlineUsers,
-                                playedTickets : 34
-                            })
+                            this.updateState('config', update[name] = data[name]);
+                            messengerService.success(name + ' updates');
                         })
                         .catch(err => $log.error(err))
                 }
+
+
+                /*
+                    HELPERS
+                */
+
+                _camelCaseToHyphen(key) {
+                    return key.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
+                }
+
 
 
             }

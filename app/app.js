@@ -76,14 +76,14 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService, messagerService) => {
+    .run(($transitions, $state, appService, navigationService, socketService, messengerService) => {
         console.log('- App is running...');
         appService.state('name', 'Niqei');
 
         socketService.connect();
 
         socketService.receive('announcements', (data) => {
-            messagerService.success(data.message);
+            messengerService.success(data.message);
         });
 
         //On route change

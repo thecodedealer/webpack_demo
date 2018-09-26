@@ -61,6 +61,10 @@ module.exports = angular.module('abstractService', [])
                     return hook;
                 }
 
+                updateState(name, update) {
+                    this.state(name, Object.assign(this.state(name), update));
+                }
+
                 removeStateHook(name, hook) {
                     let index = this.$stateHook[name].indexOf(hook);
                     this.$stateHook[name].splice(index, 1);
