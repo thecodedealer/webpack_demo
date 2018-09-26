@@ -1,16 +1,27 @@
 'use strict';
 
 module.exports = angular.module('services', [
-    require('./abstractService').name,
-    require('./appService').name,
-    require('./routerServiceProvider').name,
-    require('./navigationService').name,
-    require('./historyService').name,
+    /*
+        CORE SERVICES
+    */
+    require('./core/abstractService').name,
+    require('./core/appService').name,
+    require('./core/routerServiceProvider').name,
+    require('./core/navigationService').name,
+    require('./core/socketService').name,
+    require('./core/messagerService').name,
+    require('./core/authService').name,
+    require('./core/apiService').name,
+
+    /*
+        SECTIONS
+    */
+    require('./sections/dashboardService').name,
+
+    /*
+         FEATURES
+    */
     require('./chartService').name,
-    require('./dataService').name,
-    require('./socketService').name,
-    require('./messagerService').name,
-    require('./authService').name,
-    require('./apiService').name,
+    require('./dataService').name
 ])
 ;

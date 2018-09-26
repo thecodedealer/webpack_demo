@@ -4,17 +4,16 @@ module.exports = angular.module('cardComponent', [])
         bindings: {
             config: '<'
         },
-        controller: ['$scope', '$state', 'appService',
-            function ($scope, $state, appService) {
+        controller: ['$scope', '$state', 'appService', 'dashboardService',
+            function ($scope, $state, appService, dashboardService) {
 
                 /*
                 * INJECT SERVICES
                 * */
                 $scope.appService = appService;
+                $scope.dashboardService = dashboardService;
 
-                /*
-				 COMPONENT INITIALIZATION
-				 */
+
                 this.$onInit = () => {
 
                 };
@@ -22,7 +21,7 @@ module.exports = angular.module('cardComponent', [])
         template: /*html*/ `
               <div class="card text-white {{$ctrl.config.cardColor}} o-hidden h-100">
                 <div class="card-body">
-                    <div>{{$ctrl.config.description}}</div>
+                    <div>{{dashboardService.state('config')[$ctrl.config.action]}} {{$ctrl.config.description}}</div>
                     <div class="card-body-icon">
                         <i class="fa fa-fw {{$ctrl.config.cardIcon}}"></i>
                     </div>

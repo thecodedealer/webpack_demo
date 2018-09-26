@@ -18,7 +18,7 @@ module.exports = angular.module('userSectionComponent', [])
                 };
 
                 $scope.testRequest = () => {
-                    API.test('http://localhost:3000').get().$promise
+                    API.call('online-users').get().$promise
                         .then(data => $log.log(data))
                         .catch(err => $log.error(err))
                 }

@@ -1,42 +1,27 @@
 "use strict";
 module.exports = angular.module('dashboardComponent', [])
     .component('dashboard', {
-        controller: ['$scope', 'appService',
-            function ($scope, appService) {
+        controller: ['$scope', 'appService', 'dashboardService',
+            function ($scope, appService, dashboardService) {
 
                 /*
                     INJECT SERVICES
                 */
                 $scope.appService = appService;
+                $scope.dashboardService = dashboardService;
 
                 this.$onInit = () => {
+                    dashboardService.getOnlineUsers();
                 };
 
 
-                $scope.message = "Dashboard";
-
-
-                $scope.cards = [
-                    {
-                        name: "Messages",
-                        cardColor: "bg-primary",
-                        cardIcon: "fa-users",
-                        description: '34 users online'
-                    },
-                    {
-                        name: "Tichete jucate",
-                        cardColor: "bg-warning",
-                        cardIcon: "fa-ticket",
-                        description: '99 tichete jucate'
-                    }
-                ];
             }],
         template: `
             <div>
                 <!-- Icon Cards-->
                 <div class="row">
-                    <div class="col-xl-3 col-sm-6 mb-3" ng-repeat="card in cards">
-                        <card config="card"></card>
+                    <div class="col-xl-3 col-sm-6 mb-3" ng-repeat="card in dashboardService.getCards()">
+                        <card config="card" action="dashboardService.state('state')[card.action]"></card>
                     </div>
                     <!--<div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-warning o-hidden h-100">

@@ -8,6 +8,11 @@ module.exports = angular.module('components', [
     */
     require('./pages/dashboardComponent').name,
     require('./pages/userSectionComponent').name,
+    require('./pages/logSectionComponent').name,
+    require('./pages/settingsSectionComponent').name,
+    require('./pages/ticketsSectionComponent').name,
+    require('./pages/archiveSectionComponent').name,
+
     /*
         Elements
     */
