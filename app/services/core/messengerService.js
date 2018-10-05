@@ -25,7 +25,7 @@ module.exports = angular.module('messengerService', [])
                 */
                 success(message) {
                     $.notify({
-                        title: '<strong>Success!</strong>',
+                        title: '<i class="fa fa-check" aria-hidden="true"></i>',
                         message: message
                     }, {
                         type: 'success'

@@ -19,10 +19,12 @@ module.exports = angular.module('components', [
     require('./elements/mainLoader').name,
     require('./elements/breadcrumbsComponent').name,
     require('./elements/cardComponent').name,
+
     /*
-        Charts
+        Features
     */
-    require('./charts/areaChartComponent').name
+    require('./features/areaChartComponent').name,
+    require('./features/dataTablesComponent').name
 
 ])
 ;

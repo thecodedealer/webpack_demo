@@ -17,9 +17,9 @@ window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
 };
 
 // Require jQuery
-window.$ = window.jQuery = require('jquery');
-// Require Data Tables
-window.dt = require( 'datatables.net' );
+window.$ = window.jquery = require( 'jquery' );
+// DataTables
+require( 'datatables.net-bs4' );
 
 
 // Angular & it's modules
@@ -78,7 +78,6 @@ window.app = angular.module('startupApp', [
     */
     .run(($transitions, $state, appService, navigationService, socketService, messengerService) => {
         console.log('- App is running...');
-        appService.state('name', 'Niqei');
 
         socketService.connect();
 

@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('routerServiceProvider', [])
-    .provider('routerService', ['$stateProvider', '$urlRouterProvider',
-        ($stateProvider, $urlRouterProvider) => {
+    .provider('routerService', ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+        ($stateProvider, $urlRouterProvider, $locationProvider) => {
             return {
                 $get: {},
                 initRoutes: () => {
@@ -102,7 +102,6 @@ module.exports = angular.module('routerServiceProvider', [])
                             }
                         })
                     ;
-
                     $urlRouterProvider.otherwise('/dashboard');
                 }
 

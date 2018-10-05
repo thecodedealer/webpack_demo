@@ -2846,7 +2846,7 @@ module.exports = function(Chart) {
 			return 0;
 		},
 
-		// gets the max border or hover width to properly scale pie charts
+		// gets the max border or hover width to properly scale pie features
 		getMaxBorderWidth: function(arcs) {
 			var max = 0;
 			var index = this.index;
@@ -3634,7 +3634,7 @@ defaults._set('scatter', {
 
 module.exports = function(Chart) {
 
-	// Scatter charts use line controllers
+	// Scatter features use line controllers
 	Chart.controllers.scatter = Chart.controllers.line;
 
 };
@@ -4614,7 +4614,7 @@ module.exports = function(Chart) {
 				listeners[type] = listener;
 			});
 
-			// Elements used to detect size change should not be injected for non responsive charts.
+			// Elements used to detect size change should not be injected for non responsive features.
 			// See https://github.com/chartjs/Chart.js/issues/2210
 			if (me.options.responsive) {
 				listener = function() {
@@ -4954,7 +4954,7 @@ module.exports = function(Chart) {
 			var data = dataset.data || (dataset.data = []);
 
 			// In order to correctly handle data addition/deletion animation (an thus simulate
-			// real-time charts), we need to monitor these data modifications and synchronize
+			// real-time features), we need to monitor these data modifications and synchronize
 			// the internal meta data accordingly.
 			if (me._data !== data) {
 				if (me._data) {
@@ -5248,7 +5248,7 @@ module.exports = function(Chart) {
 					// scale config merging is complex. Add our own function here for that
 					target[key] = helpers.scaleMerge(tval, sval);
 				} else if (key === 'scale') {
-					// used in polar area & radar charts since there is only one scale
+					// used in polar area & radar features since there is only one scale
 					target[key] = helpers.merge(tval, [Chart.scaleService.getScaleDefaults(sval.type), sval]);
 				} else {
 					helpers._merger(key, target, source, options);
@@ -6429,7 +6429,7 @@ module.exports = {
 
 		helpers.each(leftBoxes.concat(rightBoxes, topBoxes, bottomBoxes), getMinimumBoxSize);
 
-		// If a horizontal box has padding, we move the left boxes over to avoid ugly charts (see issue #2478)
+		// If a horizontal box has padding, we move the left boxes over to avoid ugly features (see issue #2478)
 		var maxHorizontalLeftPadding = 0;
 		var maxHorizontalRightPadding = 0;
 		var maxVerticalTopPadding = 0;
@@ -8212,7 +8212,7 @@ module.exports = function(Chart) {
 	// @return : new tooltip item
 	function createTooltipItem(element) {
 		var xScale = element._xScale;
-		var yScale = element._yScale || element._scale; // handle radar || polarArea charts
+		var yScale = element._yScale || element._scale; // handle radar || polarArea features
 		var index = element._index;
 		var datasetIndex = element._datasetIndex;
 
@@ -10592,7 +10592,7 @@ function initCanvas(canvas, config) {
 	if (renderHeight === null || renderHeight === '') {
 		if (canvas.style.height === '') {
 			// If no explicit render height and style height, let's apply the aspect ratio,
-			// which one can be specified by the user but also by charts as default option
+			// which one can be specified by the user but also by features as default option
 			// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
 			canvas.height = canvas.width / (config.options.aspectRatio || 2);
 		} else {

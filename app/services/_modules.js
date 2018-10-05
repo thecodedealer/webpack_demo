@@ -12,6 +12,7 @@ module.exports = angular.module('services', [
     require('./core/messengerService').name,
     require('./core/authService').name,
     require('./core/apiService').name,
+    require('./core/utilService').name,
 
     /*
         SECTIONS
@@ -21,7 +22,7 @@ module.exports = angular.module('services', [
     /*
          FEATURES
     */
-    require('./chartService').name,
+    require('./features/chartService').name,
     require('./dataService').name
 ])
 ;

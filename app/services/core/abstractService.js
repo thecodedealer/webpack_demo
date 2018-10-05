@@ -17,10 +17,13 @@ module.exports = angular.module('abstractService', [])
 					 */
                     this.$stateHook = {};
                     this.$state = {};
-                    this.$form = {};
-                    this.$charts = {};
+                    this.forms = {};
+                    this.charts = {};
                 }
 
+                /*
+                    STATE MANAGEMENT
+                */
                 state(name, value = undefined, notifyOnDuplicates = false) {
                     let oldValue = this.$state[name] !== undefined ? this.$state[name] : null;
                     if (value === undefined) {
@@ -83,78 +86,44 @@ module.exports = angular.module('abstractService', [])
                         .catch(err => $log.error(err));
                 }
 
+
                 /*
-                    Charts
+                    FORMS MANAGEMENT
                 */
 
-                newChart(name) {
-                    this.$charts[name] = {};
-                    let ctx = document.getElementById(name);
-                    this.$charts[name] = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
-                            datasets: [{
-                                label: "Sessions",
-                                lineTension: 0.3,
-                                backgroundColor: "rgba(2,117,216,0.2)",
-                                borderColor: "rgba(2,117,216,1)",
-                                pointRadius: 5,
-                                pointBackgroundColor: "rgba(2,117,216,1)",
-                                pointBorderColor: "rgba(255,255,255,0.8)",
-                                pointHoverRadius: 5,
-                                pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                                pointHitRadius: 20,
-                                pointBorderWidth: 2,
-                                data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
-                            }],
-                        },
-                        options: {
-                            scales: {
-                                xAxes: [{
-                                    time: {
-                                        unit: 'date'
-                                    },
-                                    gridLines: {
-                                        display: false
-                                    },
-                                    ticks: {
-                                        maxTicksLimit: 7
-                                    }
-                                }],
-                                yAxes: [{
-                                    ticks: {
-                                        min: 0,
-                                        max: 40000,
-                                        maxTicksLimit: 5
-                                    },
-                                    gridLines: {
-                                        color: "rgba(0, 0, 0, .125)",
-                                    }
-                                }],
-                            },
-                            legend: {
-                                display: false
-                            }
-                        }
-                    });
-
+                createForm(name) {
+                    if (name) {
+                        this.forms[name] = {};
+                        $log.log('Created new form: ' + name)
+                    } else
+                        $log.warn('Form name is not defined!')
                 }
 
-                chart(name, details = undefined) {
-                    if (details !== undefined)
-                        this.$charts[name] = details;
-                    else {
-                        if (!this.$charts[name])
-                            this.newChart(name);
-                        return this.$charts[name];
-                    }
+                form(name) {
+                    //TODO get form
+                    if (this.forms[name])
+                        return this.forms[name];
+                    else
+                        this.createForm(name);
                 }
 
-                clearChart(name) {
-                    if (!!this.$charts[name])
-                        delete this.$charts[name];
+                deleteForm(name) {
+                    //TODO delete form
+                    if (this.forms[name]) {
+                        delete this.forms[name];
+                    } else
+                        $log.warn('Form ' + name + ' not found!');
                 }
+
+                /*
+                    DATA TABLES MANAGEMENT
+                */
+
+                // createDataTable(name) {
+                //     $('#test').DataTable();
+                // }
+
+
 
             }
 
