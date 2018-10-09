@@ -1,27 +1,28 @@
 "use strict";
 module.exports = angular.module('dataTablesComponent', [])
     .component('table', {
-        controller: ['$scope', 'appService',
-            function ($scope, appService) {
+        controller: ['$scope', '$timeout', 'appService',
+            function ($scope, $timeout, appService) {
 
                 /*
                     INJECT SERVICES
                 */
                 $scope.appService = appService;
 
+
                 this.$onInit = () => {
-
+                    // console.log(require('../../../data/tables'));
+                    $timeout(() =>{
+                        $('#test2').DataTable();
+                    }, 500)
                 };
-
-                this.$postLink = () => {
-                    $('#test').DataTable();
-                }
 
             }],
 
         template: `
             <div class="data-table-component">
-                <table id="test" class="table table-striped table-bordered" style="width:100%">
+        
+                <table id="test2" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Name</th>
