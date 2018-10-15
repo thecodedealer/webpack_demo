@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('dashboardService', [])
-    .factory('dashboardService', ['$log', 'abstractService', 'API', 'messengerService', 'utilService',
-        ($log, abstractService, API, messengerService, utilService) => {
+    .factory('dashboardService', ['$log', 'abstractService', 'API', 'messengerService', 'utilService', 'component',
+        ($log, abstractService, API, messengerService, utilService, component) => {
 
             class DashboardService extends abstractService {
                 constructor() {

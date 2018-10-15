@@ -19,6 +19,7 @@ module.exports = angular.module('components', [
     require('./elements/mainLoader').name,
     require('./elements/breadcrumbsComponent').name,
     require('./elements/cardComponent').name,
+    require('./elements/componentLoader').name,
 
     /*
         Features

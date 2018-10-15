@@ -12,8 +12,8 @@ module.exports = angular.module('API', [])
                     API METHODS
                 */
 
-                call(path, payload = {}) {
-                    return $resource(this._prepareUrl(path), payload, this._prepareMethods());
+                call(url, payload = {}) {
+                    return $resource(this._prepareUrl(url), payload, this._prepareMethods());
                 }
 
 
@@ -21,8 +21,7 @@ module.exports = angular.module('API', [])
                 /*
                     HELPERS
                 */
-
-                _prepareUrl(path, custom = false) {
+                _prepareUrl(path) {
                     return this.baseUrl + path;
                 }
 
@@ -31,7 +30,7 @@ module.exports = angular.module('API', [])
                         'get':    {method: 'GET'},
                         'save':   {method: 'POST'},
                         'query':  {method: 'GET', isArray: true},
-                        'remove': {method: 'DELETE'},
+                        'update': {method: 'PUT'},
                         'delete': {method: 'DELETE'}
                     }
                 }

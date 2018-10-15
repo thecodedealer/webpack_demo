@@ -1,8 +1,8 @@
 "use strict";
 module.exports = angular.module('dashboardComponent', [])
     .component('dashboard', {
-        controller: ['$scope', 'appService', 'dashboardService',
-            function ($scope, appService, dashboardService) {
+        controller: ['$scope', 'appService', 'dashboardService', 'component', '_',
+            function ($scope, appService, dashboardService, component, _) {
 
                 /*
                     INJECT SERVICES
@@ -11,30 +11,45 @@ module.exports = angular.module('dashboardComponent', [])
                 $scope.dashboardService = dashboardService;
 
                 this.$onInit = () => {
-                    dashboardService.initPageConfiguration();
+                    // dashboardService.initPageConfiguration();
+                    component.card('online-users', {
+                        id: 'online-users',
+                        path: 'online-users',
+                        title: "Online users",
+                        description: "",
+                        data: {},
+                        fields: [{}, {}]
+                    });
+                    console.log(component.getAllKeys('cards'));
                 };
 
-                dashboardService.createDataTable('test');
+                $scope.cardConfig = {
+                    name: 'online-users'
+                };
 
+                // dashboardService.createDataTable('test');
+                $('#test').DataTable();
             }],
         template: `
             <div>
                 <!-- Cards section-->
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 mb-3" ng-repeat="card in dashboardService.state('pageConfig').cards">
-                        <card config="card"></card>
-                    </div>
-                </div>
+                <!--<div class="row">-->
+                    <!--<div class="col-xl-3 col-sm-6 mb-3" ng-repeat="card in dashboardService.state('pageConfig').cards">-->
+                        <!--<card name="online-users"></card>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <!--End cards section-->
+                
+                <card data="cardConfig"></card>
                 
                 
                 <!--Data table-->
                 <div class="data-table-section">
-                    <table></table>
+                    <!--<table></table>-->
                 </div>
                 <!--End data table-->
                 
-                <table id="test" class="table table-striped table-bordered" style="width:100%">
+                <!--<table id="test" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -135,7 +150,7 @@ module.exports = angular.module('dashboardComponent', [])
                                 <td>2008/12/19</td>
                                 <td>$90,560</td>
                             </tr>
-                    </table>
+                    </table>-->
                                 <!---->
             <!--</div>-->
 		`

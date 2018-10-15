@@ -13,6 +13,8 @@ module.exports = angular.module('services', [
     require('./core/authService').name,
     require('./core/apiService').name,
     require('./core/utilService').name,
+    require('./core/componentsService').name,
+    require('./core/cronService').name,
 
     /*
         SECTIONS

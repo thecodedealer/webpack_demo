@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('appService', [])
-    .factory('appService', ['abstractService',
-        (abstractService) => {
+    .factory('appService', ['abstractService', 'cronService',
+        (abstractService, cronService) => {
 
         class AppService extends abstractService{
             constructor() {
@@ -12,13 +12,21 @@ module.exports = angular.module('appService', [])
                     States
                 */
                 this.state('config', {
-                    isOnline: null,
+                    isOnline: navigator.onLine,
                     loggedIn: null,
                     route: null,
 
                 });
                 this.state('showMainLoader', false);
 
+                /*
+                    Watching states
+                */
+
+                //Execute cron
+                cronService.create('check-online-status', 60, () => {
+                    this.state('config').isOnline = navigator.onLine;
+                })
 
             }
 
@@ -32,8 +40,6 @@ module.exports = angular.module('appService', [])
             checknetworkStatus() {
 
             }
-
-
 
 
         }

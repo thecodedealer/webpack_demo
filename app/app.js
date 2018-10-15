@@ -16,59 +16,49 @@ window.onerror = (errorMsg, url, lineNumber, column, errorObj) => {
     }
 };
 
-// Require jQuery
-window.$ = window.jquery = require( 'jquery' );
-// DataTables
-require( 'datatables.net-bs4' );
+/*
+     LOAD jQUERY
+*/
+window.$ = window.jquery = require('jquery');
 
-
-// Angular & it's modules
+/*
+     LOAD ANGULAR & OWN MODULES
+*/
 require('angular');
 require('angular-ui-router');
 require('angular-route');
 require('angular-resource');
 
-//VENDORS
-require('bootstrap');
-require('moment');
-require('../vendor/Chart');
-require('bootstrap-notify');
 
 /*
    ANGULAR APP
 */
 window.app = angular.module('startupApp', [
     /*
-        ANGULAR DEPENDENCIES
+        ANGULAR MODULES
     */
     'ui.router',
     'ngRoute',
     'ngResource',
 
+    /*
+        VENDORS
+    */
+    require('./vendors').name,
 
     /*
-        CUSTOM DEPENDENCY
+        CUSTOM MODULES
     */
     require('./services/_modules').name,
     require('./components/_modules').name
 ])
-    /*
-       VENDORS
-    */
-    .factory('moment', ['$window', $window => {
-        return require('moment');
-    }])
-
-    .factory('socket_io', ['$window', $window => {
-        return require('socket.io-client');
-    }])
 
     /*
-        ANGULAR CONFIG
+        APP CONFIG
     */
     .config(['routerServiceProvider',
         (routerServiceProvider) => {
-            //Init routes
+            //Init app routes
             routerServiceProvider.initRoutes();
         }
     ])
@@ -76,10 +66,12 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService, messengerService) => {
+    .run(($transitions, $state, appService, navigationService, socketService, messengerService, component) => {
         console.log('- App is running...');
 
         socketService.connect();
+
+
 
         socketService.receive('announcements', (data) => {
             messengerService.success(data.message);

@@ -88,9 +88,8 @@ module.exports = angular.module('abstractService', [])
 
 
                 /*
-                    FORMS MANAGEMENT
+                    FORM MANAGEMENT
                 */
-
                 createForm(name) {
                     if (name) {
                         this.forms[name] = {};
@@ -100,7 +99,6 @@ module.exports = angular.module('abstractService', [])
                 }
 
                 form(name) {
-                    //TODO get form
                     if (this.forms[name])
                         return this.forms[name];
                     else
@@ -108,21 +106,11 @@ module.exports = angular.module('abstractService', [])
                 }
 
                 deleteForm(name) {
-                    //TODO delete form
                     if (this.forms[name]) {
                         delete this.forms[name];
                     } else
                         $log.warn('Form ' + name + ' not found!');
                 }
-
-                /*
-                    DATA TABLES MANAGEMENT
-                */
-
-                // createDataTable(name) {
-                //     $('#test').DataTable();
-                // }
-
 
 
             }

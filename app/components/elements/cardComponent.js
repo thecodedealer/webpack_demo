@@ -2,40 +2,48 @@
 module.exports = angular.module('cardComponent', [])
     .component('card', {
         bindings: {
-            config: '<'
+            data: '<'
         },
-        controller: ['$scope', '$state', 'appService', 'dashboardService',
-            function ($scope, $state, appService, dashboardService) {
+        controller: ['$scope', '$state', 'appService', 'dashboardService', 'component',
+            function ($scope, $state, appService, dashboardService, component) {
 
                 /*
                     INJECT SERVICES
                 */
                 $scope.appService = appService;
                 $scope.dashboardService = dashboardService;
+                $scope.component = component;
 
 
                 this.$onInit = () => {
-
+                    $scope.config = component.card(this.data.name);
                 };
             }],
-        template: /*html*/ `
-              <div class="card text-white {{$ctrl.config.cardColor}} o-hidden h-100">
+        template: `
+              <div class="card text-white bg-primary o-hidden h-100">
+                <component-loader></component-loader>
+                <!--Header-->
+                <div class="card-header">
+                    {{config.title}}
+                </div>
+                <!--Body-->
                 <div class="card-body">
-                    <div>{{dashboardService.state('cards')[$ctrl.config.id]}} {{$ctrl.config.description}}</div>
+                    <div></div>
                     <div class="card-body-icon">
                         <i class="fa fa-fw {{$ctrl.config.cardIcon}}"></i>
                     </div>
-                    <div class="mr-5">{{$ctrl.config.cardName}}</div>
+                    <div class="mr-5">{{config.cardName}}</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
-                    <span class="float-left" ng-click="dashboardService.updateCardData($ctrl.config.id)">
-                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                <!--Footer-->
+                <div class="card-footer text-white clearfix small z-1">
+                    <span class="float-left" ng-click="component.updateData(config.id)">
+                        <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
                     </span>
-                    <span class="float-left" style="margin-left: 10px">View Details</span>
+                    <span class="float-left" style="margin-left: 10px"></span>
                     <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>
-                </a>
+                </div>
             </div>
              
 		`

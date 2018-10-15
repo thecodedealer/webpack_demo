@@ -21,7 +21,7 @@ const cssDir = path.resolve(__dirname, './dist/css');
 const config = {
     entry: ['./app/app.js', './app/styles/app.scss'],
     output: {
-        filename: 'bundle.js',
+        filename: 'app.bundle.js',
         path: path.resolve(jsDir)
     },
     performance: {hints: false},
@@ -42,7 +42,7 @@ const config = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'bundle.css',
+                            name: 'app.bundle.css',
                             outputPath: '/'
                         }
                     },
@@ -63,7 +63,7 @@ const config = {
                 ]
             },
             {
-                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
