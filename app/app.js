@@ -66,12 +66,13 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService, messengerService, component) => {
+    .run(($transitions, $state, appService, navigationService, socketService, messengerService, component, moment) => {
         console.log('- App is running...');
 
         socketService.connect();
 
-
+        //momentJS config
+        moment.locale('ro');
 
         socketService.receive('announcements', (data) => {
             messengerService.success(data.message);

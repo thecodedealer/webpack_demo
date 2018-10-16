@@ -17,8 +17,10 @@ module.exports = angular.module('dashboardComponent', [])
                         path: 'online-users',
                         title: "Online users",
                         description: "",
-                        data: {},
-                        fields: [{}, {}]
+                        settings: '',
+                        data: [3],
+                        fields: ['online users'],
+                        updated: null
                     });
                     console.log(component.getAllKeys('cards'));
                 };

@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('component', [])
-    .factory('component', ['$log', 'abstractService', '$window', 'moment', "_",
-        ($log, abstractService, $window, moment, _) => {
+    .factory('component', ['$log', 'abstractService', '$window', 'moment', "_", 'API',
+        ($log, abstractService, $window, moment, _, API) => {
             const COMPONENTS_TYPE = [cards, tables, charts];
             let cards = {};
             let tables = {};
@@ -71,8 +71,29 @@ module.exports = angular.module('component', [])
                 /*
                     UPDATE COMPONENT DATA
                 */
-                updateData(id) {
-                    console.log('Update component: ' + id);
+                fetchData(name) {
+                    const component = this.card(name);
+                    //call API
+                    API.call(component.path).get().$promise
+                        .then(response => {
+                            this.card(name).data = response.data;
+                            this.card(name).updatedAt = moment().format();
+                        })
+                        .catch(err => $log.error(err))
+                        .finally(() => {})
+                }
+
+                updateData(name) {
+                    $log.log('Update component: ' + name);
+                    const component = this.card(name);
+                    //call API
+                    API.call(component.path).get().$promise
+                        .then(response => {
+                            this.card(name).data = response.data;
+                            this.card(name).updatedAt = moment().format();
+                        })
+                        .catch(err => $log.error(err))
+                        .finally(() => {})
                 }
 
                 getAllKeys(name) {

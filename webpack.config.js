@@ -73,6 +73,17 @@ const config = {
                     }
                 }]
             },
+            {
+                test: /.(svg(2)?)(\?[a-z0-9]+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'svg/',    // where the fonts will go
+                        publicPath: './svg'       // override the default path
+                    }
+                }]
+            }
             ]
     },
     plugins: [
