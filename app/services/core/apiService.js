@@ -6,7 +6,7 @@ module.exports = angular.module('API', [])
 
             class ApiService{
                 constructor() {
-                    this.baseUrl = 'http://localhost:3000/';
+                    this.serverUrl = 'http://localhost:3000/';
                 }
                 /*
                     API METHODS
@@ -22,7 +22,7 @@ module.exports = angular.module('API', [])
                     HELPERS
                 */
                 _prepareUrl(path) {
-                    return this.baseUrl + path;
+                    return this.serverUrl + path;
                 }
 
                 _prepareMethods() {

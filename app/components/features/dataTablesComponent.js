@@ -1,6 +1,6 @@
 "use strict";
 module.exports = angular.module('dataTablesComponent', [])
-    .component('table', {
+    .component('datatables', {
         controller: ['$scope', '$timeout', 'appService',
             function ($scope, $timeout, appService) {
 
@@ -11,18 +11,14 @@ module.exports = angular.module('dataTablesComponent', [])
 
 
                 this.$onInit = () => {
-                    // console.log(require('../../../data/tables'));
-                    $timeout(() =>{
-                        $('#test2').DataTable();
-                    }, 500)
+                    $('#test2').DataTable();
                 };
 
             }],
 
         template: `
-            <div class="data-table-component">
-        
-                <table id="test2" class="table table-striped table-bordered" style="width:100%">
+          
+            <table id="test2" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -124,6 +120,6 @@ module.exports = angular.module('dataTablesComponent', [])
                                 <td>$90,560</td>
                             </tr>
                     </table>
-            </div>
+           
 		`
     });

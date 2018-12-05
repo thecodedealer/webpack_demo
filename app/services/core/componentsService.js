@@ -4,6 +4,7 @@ module.exports = angular.module('component', [])
     .factory('component', ['$log', 'abstractService', '$window', 'moment', "_", 'API',
         ($log, abstractService, $window, moment, _, API) => {
             const COMPONENTS_TYPE = [cards, tables, charts];
+
             let cards = {};
             let tables = {};
             let charts = {};
@@ -36,6 +37,39 @@ module.exports = angular.module('component', [])
                     this.charts = {};
                 }
 
+                /*
+                    Register component
+                */
+                register(type, name, settings) {
+                    //check if type exists
+                    if (COMPONENTS_TYPE.indexOf(type) === -1) {
+                        $log.error(`Component type: ${type} not exist!`);
+                        return;
+                    } else if (this[type][name] !== undefined) {
+                        $log.error(`Component name: ${name} already registered!`);
+                        return;
+                    }
+
+                    //register component
+
+                    //store if is an old value
+                    let oldValue = this[type][name] !== undefined ? this[type][name] : null;
+
+                    const fullName = this.constructor.name + '.' + name;
+
+                    //log
+                    if (!cards[fullName])
+                        cards[fullName] = [];
+
+                    [fullName].push({
+                        settings: settings,
+                        time: moment().format()
+                    });
+
+
+                    this[type][name] = settings;
+                }
+
                 card(name, settings) {
                     //store if is an old value
                     let oldValue = this.cards[name] !== undefined ? this.cards[name] : null;
@@ -44,8 +78,7 @@ module.exports = angular.module('component', [])
                         //log
                         // $log.warn("Component CARD name: [" + name + "] is not registered!");
                         return this.cards[name] !== undefined ? this.cards[name] : null;
-                    }
-                    else {
+                    } else {
                         const fullName = this.constructor.name + '.' + name;
                         //log
                         if (!cards[fullName])
@@ -80,7 +113,8 @@ module.exports = angular.module('component', [])
                             this.card(name).updatedAt = moment().format();
                         })
                         .catch(err => $log.error(err))
-                        .finally(() => {})
+                        .finally(() => {
+                        })
                 }
 
                 updateData(name) {
@@ -93,7 +127,8 @@ module.exports = angular.module('component', [])
                             this.card(name).updatedAt = moment().format();
                         })
                         .catch(err => $log.error(err))
-                        .finally(() => {})
+                        .finally(() => {
+                        })
                 }
 
                 getAllKeys(name) {

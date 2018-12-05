@@ -20,11 +20,7 @@ module.exports = angular.module('cardComponent', [])
                 this.$onInit = () => {
                     $scope.config = component.card(this.data.name);
                     component.fetchData(this.data.name);
-                    let updatedAt = $scope.updatedAt;
-                    setInterval(() => {
-                        updatedAt = utilService.pingTimeFrom(component.card(this.data.name).updatedAt);
 
-                    }, 1000)
                 };
 
             }],
@@ -45,7 +41,7 @@ module.exports = angular.module('cardComponent', [])
                 <!--Footer-->
                 <div class="card-footer text-white clearfix small z-1">
                     <span class="float-left">
-                        Actualizat cu {{updatedAt}}
+                        Actualizat cu {{config.updatedAt}}
                     </span>
                     <span class="float-right" ng-click="component.updateData(config.id)">
                         <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
