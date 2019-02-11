@@ -1,5 +1,10 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["angularjs-annotate"],
-  "compact" : true
+  "presets": [
+    "es2015"
+  ],
+  "plugins": [
+    "angularjs-annotate",
+    "transform-object-rest-spread"
+  ],
+  "compact": true
 }

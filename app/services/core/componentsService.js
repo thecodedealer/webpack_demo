@@ -9,7 +9,7 @@ module.exports = angular.module('component', [])
             let tables = {};
             let charts = {};
 
-            $window.components = {
+            $window.componentssss = {
                 cards: cards,
                 tables: tables,
                 charts: charts
@@ -61,7 +61,7 @@ module.exports = angular.module('component', [])
                     if (!cards[fullName])
                         cards[fullName] = [];
 
-                    [fullName].push({
+                    e[fullName].push({
                         settings: settings,
                         time: moment().format()
                     });

@@ -4,23 +4,20 @@ module.exports = angular.module('cardComponent', [])
         bindings: {
             data: '<'
         },
-        controller: ['$scope', '$state', 'appService', 'dashboardService', 'component', 'moment', 'utilService',
-            function ($scope, $state, appService, dashboardService, component, moment, utilService) {
+        controller: ['$scope', '$state', 'appService', 'dashboardService', 'moment', 'utilService',
+            function ($scope, $state, appService, dashboardService, moment, utilService) {
 
                 /*
                     INJECT SERVICES
                 */
                 $scope.appService = appService;
                 $scope.dashboardService = dashboardService;
-                $scope.utilService = utilService;
-                $scope.component = component;
                 $scope.moment = moment;
 
 
                 this.$onInit = () => {
-                    $scope.config = component.card(this.data.name);
-                    component.fetchData(this.data.name);
-
+                    const card = $scope.card = dashboardService.card(this.data.name);
+                    card.updateFn();
                 };
 
             }],
@@ -28,22 +25,22 @@ module.exports = angular.module('cardComponent', [])
               <div class="card text-white bg-primary o-hidden h-100">
                 <!--Header-->
                 <div class="card-header">
-                    {{config.title}}
+                    {{card.title}}
                 </div>
                 <!--Body-->
                 <div class="card-body">
                     <div></div>
                     <div class="card-body-icon">
-                        <i class="fa fa-fw {{config.cardIcon}}"></i>
+                        <i class="fa fa-fw {{cardcardIcon}}"></i>
                     </div>
-                    <div class="mr-5">{{config.data[0]}} {{config.fields[0]}}</div>
+                    <div class="mr-5" ng-repeat="data in card.data track by $index">{{data}} {{card.fields[$index]}}</div>
                 </div>
                 <!--Footer-->
                 <div class="card-footer text-white clearfix small z-1">
                     <span class="float-left">
-                        Actualizat cu {{config.updatedAt}}
+                        Actualizat cu {{card.updatedAt}}
                     </span>
-                    <span class="float-right" ng-click="component.updateData(config.id)">
+                    <span class="float-right" ng-click="dashboardService.card($ctrl.data.name).updateFn()">
                         <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
                     </span>
                 </div>

@@ -1,25 +1,10 @@
 'use strict';
 
 module.exports = angular.module('dashboardService', [])
-    .factory('dashboardService', ['$log', 'abstractService', 'API', 'messengerService', 'utilService', 'component',
-        ($log, abstractService, API, messengerService, utilService, component) => {
+    .factory('dashboardService', ['$log', 'abstractService', 'API', 'messengerService', 'utilService',
+        ($log, abstractService, API, messengerService, utilService) => {
 
             class DashboardService extends abstractService {
-                get CARDS() {
-                    return [
-                        {
-                            id: 'online-users',
-                            path: 'online-users',
-                            title: "Online users",
-                            description: "",
-                            settings: '',
-                            data: [3],
-                            fields: ['online users'],
-                            updated: null
-                        }
-                    ]
-                }
-
 
                 constructor() {
                     super();

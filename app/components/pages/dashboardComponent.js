@@ -1,8 +1,8 @@
 "use strict";
 module.exports = angular.module('dashboardComponent', [])
     .component('dashboard', {
-        controller: ['$scope', 'appService', 'dashboardService', 'component', '_',
-            function ($scope, appService, dashboardService, component, _) {
+        controller: ['$scope', 'appService', 'dashboardService', '_',
+            function ($scope, appService, dashboardService, _) {
 
                 /*
                     INJECT SERVICES
@@ -11,26 +11,28 @@ module.exports = angular.module('dashboardComponent', [])
                 $scope.dashboardService = dashboardService;
 
                 this.$onInit = () => {
+
+                    const testFn = () => {
+                        console.log('Test fn')
+                    };
+
                     // dashboardService.initPageConfiguration();
-                    component.card('online-users', {
+                    dashboardService.card('online-users', {
                         id: 'online-users',
-                        path: 'online-users',
                         title: "Online users",
                         description: "",
-                        settings: '',
-                        data: [3],
-                        fields: ['online users'],
-                        updated: null
+                        options: {},
+                        data: null,
+                        fields: ['name', 'name2', 'name3', 'name 4'],
+                        api: '/',
                     });
-                    console.log(component.getAllKeys('cards'));
+
                 };
 
                 $scope.cardConfig = {
                     name: 'online-users'
                 };
 
-                // dashboardService.createDataTable('test');
-                // $('#test').DataTable();
             }],
         template: `
             <div>

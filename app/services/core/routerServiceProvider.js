@@ -41,6 +41,7 @@ module.exports = angular.module('routerServiceProvider', [])
                                 }
                             }
                         })
+
                         .state('users.all', {
                             url: '/all',
                             views: {

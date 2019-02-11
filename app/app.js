@@ -69,21 +69,21 @@ window.app = angular.module('startupApp', [
     .run(($transitions, $state, appService, navigationService, socketService, messengerService, component, moment) => {
         console.log('- App is running...');
 
-        socketService.connect();
+        // socketService.connect();
 
         //momentJS config
         moment.locale('ro');
 
-        socketService.receive('announcements', (data) => {
-            messengerService.success(data.message);
-        });
-
-        //On route change
-        $transitions.onSuccess({}, () => {
-            let currentState = $state.current.name;
-            appService.state('currentState', currentState);
-
-        });
+        // socketService.receive('announcements', (data) => {
+        //     messengerService.success(data.message);
+        // });
+        //
+        // //On route change
+        // $transitions.onSuccess({}, () => {
+        //     let currentState = $state.current.name;
+        //     appService.state('currentState', currentState);
+        //
+        // });
 
         //On state change
         appService.onStateChange('currentState', () => {
