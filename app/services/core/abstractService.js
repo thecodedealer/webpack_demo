@@ -139,44 +139,36 @@ module.exports = angular.module('abstractService', [])
                         return this.cards[name] !== undefined ? this.cards[name] : null;
                     } else {
                         const fullName = this.constructor.name + '.' + name;
-                        // add params to settings
-                        settings = {...settings, updateFn : () => this.updateData(name)};
+
+                        // add extra params to settings
+                        settings = {
+                            ...settings,
+                            id: name,
+                            updateFn: () => this.updateData(name),
+                            data: null,
+                        };
+
+                        //resolve interval update
+                        if(settings.autoUpdate)
+                            setInterval(() => this.updateData(name), settings.autoUpdate * 1000);
 
                         //log
                         if (!cards[fullName])
                             cards[fullName] = [];
-                        console.log('111')
                         cards[fullName].push({
                             settings: settings,
                             time: moment().format()
                         });
-                        console.log(cards)
+
                         this.cards[name] = settings;
-                        //notify the watcher
-                        // return this._notifyWatcher('card', name, settings, oldValue)
                     }
                 }
 
-                /*
-                   UPDATE COMPONENT DATA
-               */
-                fetchData(name) {
-                    const component = this.card(name);
-                    //call API
-                    API.call(component.path).get().$promise
-                        .then(response => {
-                            this.card(name).data = response.data;
-                            this.card(name).updatedAt = moment().format();
-                        })
-                        .catch(err => $log.error(err))
-                        .finally(() => {
-                        })
-                }
                 updateData(name) {
                     $log.log('Update component: ' + name);
                     const component = this.card(name);
                     //call API
-                    API.call(component.api).get().$promise
+                    API.call(component.api).post({fields: component.fields}).$promise
                         .then(response => {
                             this.card(name).data = response.data;
                             this.card(name).updatedAt = moment().format();
@@ -185,12 +177,6 @@ module.exports = angular.module('abstractService', [])
                         .finally(() => {
                         })
                 }
-
-                getAllKeys(name) {
-                    return _.keys(this[name]);
-                }
-
-
 
 
             }

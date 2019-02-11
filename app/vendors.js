@@ -19,4 +19,7 @@ module.exports = angular.module('vendors', [])
     .factory('_', ['$window', $window => {
         return require('underscore');
     }])
+    .factory('Promise', ['$window', $window => {
+        return require('bluebird');
+    }])
 ;

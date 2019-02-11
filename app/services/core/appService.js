@@ -33,11 +33,7 @@ module.exports = angular.module('appService', [])
             /*
                 ACTIONS
             */
-            boot() {
-
-            }
-
-            checknetworkStatus() {
+            translate(group, key, options = {}) {
 
             }
 

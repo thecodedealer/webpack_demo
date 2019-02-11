@@ -12,19 +12,12 @@ module.exports = angular.module('dashboardComponent', [])
 
                 this.$onInit = () => {
 
-                    const testFn = () => {
-                        console.log('Test fn')
-                    };
-
-                    // dashboardService.initPageConfiguration();
                     dashboardService.card('online-users', {
-                        id: 'online-users',
                         title: "Online users",
                         description: "",
                         options: {},
-                        data: null,
                         fields: ['name', 'name2', 'name3', 'name 4'],
-                        api: '/',
+                        api: '/'
                     });
 
                 };
