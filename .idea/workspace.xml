@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba011f48-3fc2-4ec5-b83d-840590d1175f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/services/core/configService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp_db/content.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/pages/dashboardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/pages/dashboardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/core/abstractService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/abstractService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/core/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/core/appService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/appService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/vendors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/build/app.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build/app.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -232,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -359,12 +348,12 @@
       <workItem from="1544428722623" duration="599000" />
       <workItem from="1548926917013" duration="5272000" />
       <workItem from="1549265669104" duration="16000" />
-      <workItem from="1549265719254" duration="20147000" />
+      <workItem from="1549265719254" duration="20220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246499000" />
+    <option name="totallyTimeSpent" value="246572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +365,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -392,7 +381,7 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32897604" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49947312" weight="0.44940153" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4963119" visible="true" weight="0.2633297" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4963119" visible="true" weight="0.2633297" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
