@@ -66,7 +66,7 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService, messengerService, component, moment) => {
+    .run(($transitions, $state, appService, navigationService, socketService, messengerService, moment) => {
         console.log('- App is running...');
 
         // socketService.connect();

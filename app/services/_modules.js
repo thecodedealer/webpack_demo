@@ -6,6 +6,7 @@ module.exports = angular.module('services', [
     */
     require('./core/abstractService').name,
     require('./core/appService').name,
+    require('./core/configService').name,
     require('./core/routerServiceProvider').name,
     require('./core/navigationService').name,
     require('./core/socketService').name,
@@ -13,7 +14,6 @@ module.exports = angular.module('services', [
     require('./core/authService').name,
     require('./core/apiService').name,
     require('./core/utilService').name,
-    require('./core/componentsService').name,
     require('./core/cronService').name,
 
     /*

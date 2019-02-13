@@ -2,7 +2,7 @@
 module.exports = angular.module('cardComponent', [])
     .component('card', {
         bindings: {
-            data: '<'
+            name: '@'
         },
         controller: ['$scope', '$state', 'appService', 'dashboardService', 'moment', 'utilService',
             function ($scope, $state, appService, dashboardService, moment, utilService) {
@@ -16,7 +16,7 @@ module.exports = angular.module('cardComponent', [])
 
 
                 this.$onInit = () => {
-                    const card = $scope.card = dashboardService.card(this.data.name);
+                    const card = $scope.card = dashboardService.card(this.name);
                     card.updateFn();
                 };
 
@@ -35,12 +35,13 @@ module.exports = angular.module('cardComponent', [])
                     </div>
                     <div class="mr-5" ng-repeat="data in card.data track by $index">{{data}} {{card.fields[$index]}}</div>
                 </div>
+                
                 <!--Footer-->
-                <div class="card-footer text-white clearfix small z-1">
+                <div class="card-footer text-black clearfix small z-1">
                     <span class="float-left">
                         Actualizat cu {{card.updatedAt}}
                     </span>
-                    <span class="float-right" ng-click="dashboardService.card($ctrl.data.name).updateFn()">
+                    <span class="float-right" ng-click="card.updateFn()">
                         <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
                     </span>
                 </div>

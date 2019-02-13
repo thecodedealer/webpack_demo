@@ -20,27 +20,27 @@ module.exports = angular.module('dashboardComponent', [])
                         api: '/'
                     });
 
-                };
+                    dashboardService.table('test-table', {
+                        title: "Test table",
+                        description: "",
+                        options: {},
+                        fields: ['Name', 'Position', 'Office', 'Age', 'Start date', 'Salary'],
+                        api: '/getTestTable'
+                    });
 
-                $scope.cardConfig = {
-                    name: 'online-users'
                 };
 
             }],
         template: `
             <div>
                 <!--Cards section-->
-                <card data="cardConfig"></card>
+                <card name="online-users"></card>
                 <!--End cards section-->
-                
-                
-                
+                  
                 <br>
                 
                 <!--Data table-->
-                <div class="data-table-section card">
-                    <datatables></datatables>
-                </div>
+                 <datatables name="test-table"></datatables>
                 <!--End data table-->
                 
             </div>

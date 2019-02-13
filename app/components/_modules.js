@@ -1,6 +1,9 @@
 'use strict';
 
 module.exports = angular.module('components', [
+    /*
+        Main Layout
+    */
     require('./mainLayoutComponent').name,
 
     /*
@@ -26,6 +29,4 @@ module.exports = angular.module('components', [
     */
     require('./features/areaChartComponent').name,
     require('./features/dataTablesComponent').name
-
-])
-;
+]);

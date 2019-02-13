@@ -6,7 +6,7 @@ module.exports = angular.module('API', [])
 
             class ApiService{
                 constructor() {
-                    this.apiUrl = 'http://localhost:3000/api/';
+                    this.apiUrl = 'http://localhost:5000/api/';
                 }
                 /*
                     API METHODS

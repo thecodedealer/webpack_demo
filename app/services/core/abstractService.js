@@ -6,20 +6,20 @@ module.exports = angular.module('abstractService', [])
             let stateGeneralLog = [];
             let stateIndividualLog = {};
 
-            let cards = {};
-            let tables = {};
-            let charts = {};
+            let components = {
+                cards: {},
+                tables: {},
+                charts: {}
+            }
 
-            $window.components = {
-                cards: cards,
-                tables: tables,
-                charts: charts
-            };
+            $window.components = components;
 
             $window.state = {
                 generalLog: stateGeneralLog,
                 individualLog: stateIndividualLog
             };
+
+            const COMPONENTS = ['cards', 'charts', 'tables'];
 
             class AbstractService {
                 constructor() {
@@ -130,52 +130,68 @@ module.exports = angular.module('abstractService', [])
                     COMPONENTS MANAGEMENT (CARDS, TABLES, CHARTS, etc.)
                 */
                 card(name, settings) {
-                    //store if is an old value
-                    let oldValue = this.cards[name] !== undefined ? this.cards[name] : null;
-
-                    if (settings === undefined) {
-                        //log
-                        // $log.warn("Component CARD name: [" + name + "] is not registered!");
-                        return this.cards[name] !== undefined ? this.cards[name] : null;
-                    } else {
-                        const fullName = this.constructor.name + '.' + name;
-
-                        // add extra params to settings
-                        settings = {
-                            ...settings,
-                            id: name,
-                            updateFn: () => this.updateData(name),
-                            data: null,
-                        };
-
-                        //resolve interval update
-                        if(settings.autoUpdate)
-                            setInterval(() => this.updateData(name), settings.autoUpdate * 1000);
-
-                        //log
-                        if (!cards[fullName])
-                            cards[fullName] = [];
-                        cards[fullName].push({
-                            settings: settings,
-                            time: moment().format()
-                        });
-
-                        this.cards[name] = settings;
-                    }
+                    return this.component('cards', name, settings)
                 }
 
-                updateData(name) {
-                    $log.log('Update component: ' + name);
-                    const component = this.card(name);
+                table(name, settings) {
+                    return this.component('tables', name, settings)
+                }
+
+                chart(name, settings) {
+                    return this.component('charts', name, settings)
+                }
+
+                component(type, name, settings) {
+                    // Validate component
+                    if (COMPONENTS.indexOf(type) === -1) {
+                        console.error('Unsupported component: ' + name);
+                    } else {
+                        //store if is an old value
+                        let oldValue = this[type][name] !== undefined ? this[type][name] : null;
+
+                        if (settings === undefined) {
+                            //log
+                            // $log.warn("Component CARD name: [" + name + "] is not registered!");
+                            return this[type][name] !== undefined ? this[type][name] : null;
+                        } else {
+                            const fullName = this.constructor.name + '.' + name;
+
+                            // add extra params to settings
+                            settings = {
+                                ...settings,
+                                id: name,
+                                updateFn: () => this.updateData(type, name),
+                                data: null,
+                            };
+
+                            //resolve interval update
+                            if (settings.autoUpdate)
+                                setInterval(() => this.updateData(type, name), settings.autoUpdate * 1000);
+
+                            //log
+                            if (!components[type][fullName])
+                                components[type][fullName] = [];
+                            components[type][fullName].push({
+                                settings: settings,
+                                time: moment().format()
+                            });
+
+                            this[type][name] = settings;
+                        }
+                    }
+
+                }
+
+                updateData(type, name) {
+                    $log.log(`Update component: ${type} | ${name}`);
+                    const component = this[type][name];
                     //call API
                     API.call(component.api).post({fields: component.fields}).$promise
                         .then(response => {
-                            this.card(name).data = response.data;
-                            this.card(name).updatedAt = moment().format();
+                            this[type][name].data = response.data;
+                            this[type][name].updatedAt = moment().format();
                         })
                         .catch(err => $log.error(err))
-                        .finally(() => {
-                        })
                 }
 
 
