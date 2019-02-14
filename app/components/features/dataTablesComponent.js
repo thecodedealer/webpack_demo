@@ -3,23 +3,28 @@ module.exports = angular.module('dataTablesComponent', [])
 
     .component('datatables', {
         bindings: {
+            service: '<',
             name: '@'
         },
-        controller: ['$scope', '$timeout', 'appService', 'dashboardService',
-            function ($scope, $timeout, appService, dashboardService) {
+        controller: ['$scope', '$timeout', 'appService', 'timeService', 'moment',
+            function ($scope, $timeout, appService, timeService, moment) {
 
                 /*
                     INJECT SERVICES
                 */
                 $scope.appService = appService;
-
+                $scope.timeService = timeService;
 
                 this.$onInit = () => {
-                    const table = $scope.table = dashboardService.table(this.name);
-                    table.updateFn()
+                    const table = $scope.table = this.service.table(this.name);
+                    table.updateFn();
                     setTimeout(() => {
                         $('#test2').DataTable()
                     }, 1000);
+                    $scope.time = ''
+                    setInterval(() => {
+                        $scope.time = moment(table.updatedAt).fromNow();
+                    }, 1000)
                 };
 
             }],
@@ -41,11 +46,11 @@ module.exports = angular.module('dataTablesComponent', [])
                 </table>
                 
                 <!--Footer-->
-                <div class="card-footer text-black clearfix small z-1">
+                <div class="card-footer text-muted clearfix small z-1">
                     <span class="float-left">
-                        Actualizat cu {{table.updatedAt}}
+                        Actualizat cu {{time}}
                     </span>
-                    <span class="float-right" ng-click="table.updateFn()">
+                    <span class="float-right pointed" ng-click="table.updateFn()">
                         <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
                     </span>
                 </div>

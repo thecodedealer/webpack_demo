@@ -2,21 +2,20 @@
 module.exports = angular.module('cardComponent', [])
     .component('card', {
         bindings: {
+            service: '<',
             name: '@'
         },
-        controller: ['$scope', '$state', 'appService', 'dashboardService', 'moment', 'utilService',
-            function ($scope, $state, appService, dashboardService, moment, utilService) {
+        controller: ['$scope', '$state', 'appService', 'moment', 'utilService',
+            function ($scope, $state, appService, moment, utilService) {
 
                 /*
                     INJECT SERVICES
                 */
                 $scope.appService = appService;
-                $scope.dashboardService = dashboardService;
                 $scope.moment = moment;
 
-
                 this.$onInit = () => {
-                    const card = $scope.card = dashboardService.card(this.name);
+                    const card = $scope.card = this.service.card(this.name);
                     card.updateFn();
                 };
 
@@ -37,11 +36,11 @@ module.exports = angular.module('cardComponent', [])
                 </div>
                 
                 <!--Footer-->
-                <div class="card-footer text-black clearfix small z-1">
+                <div class="card-footer clearfix small z-1">
                     <span class="float-left">
                         Actualizat cu {{card.updatedAt}}
                     </span>
-                    <span class="float-right" ng-click="card.updateFn()">
+                    <span class="float-right pointed" ng-click="card.updateFn()">
                         <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
                     </span>
                 </div>

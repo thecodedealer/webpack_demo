@@ -9661,5 +9661,8 @@ footer.sticky-footer {
   .card:hover {
     box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2); }
 
+.pointed {
+  cursor: pointer; }
+
 nav a.navActive {
   color: white !important; }

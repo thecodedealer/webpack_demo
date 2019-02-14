@@ -28,5 +28,6 @@ module.exports = angular.module('components', [
         Features
     */
     require('./features/areaChartComponent').name,
-    require('./features/dataTablesComponent').name
+    require('./features/dataTablesComponent').name,
+    require('./features/chartComponent').name
 ]);

@@ -15,6 +15,7 @@ module.exports = angular.module('services', [
     require('./core/apiService').name,
     require('./core/utilService').name,
     require('./core/cronService').name,
+    require('./core/timeService').name,
 
     /*
         SECTIONS
