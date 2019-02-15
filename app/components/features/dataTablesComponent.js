@@ -18,12 +18,20 @@ module.exports = angular.module('dataTablesComponent', [])
                 this.$onInit = () => {
                     const table = $scope.table = this.service.table(this.name);
                     table.updateFn();
+
                     setTimeout(() => {
                         $('#test2').DataTable()
                     }, 1000);
-                    $scope.time = ''
+
+                    const updateTime = () => {
+                        return $scope.time = moment(table.updatedAt).fromNow();
+                    };
+
+                    updateTime();
                     setInterval(() => {
-                        $scope.time = moment(table.updatedAt).fromNow();
+                        console.log('update');
+                        $scope.time = updateTime();
+                        console.log($scope.time)
                     }, 1000)
                 };
 

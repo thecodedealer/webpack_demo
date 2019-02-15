@@ -9,7 +9,7 @@ require('datatables.net-bs4');
 
 module.exports = angular.module('vendors', [])
     .factory('moment', ['$window', $window => {
-        return require('moment/min/moment-with-locales.min');
+        return window.moment = require('moment/min/moment-with-locales.min');
     }])
 
     .factory('socket_io', ['$window', $window => {

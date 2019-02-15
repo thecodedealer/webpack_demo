@@ -10,7 +10,7 @@ module.exports = angular.module('abstractService', [])
                 cards: {},
                 tables: {},
                 charts: {}
-            }
+            };
 
             $window.components = components;
 
@@ -28,11 +28,17 @@ module.exports = angular.module('abstractService', [])
 					 */
                     this.$stateHook = {};
                     this.$state = {};
+
                     this.forms = {};
+
                     this.charts = {};
                     this.cards = {};
                     this.tables = {};
-                    this.charts = {};
+                    this.$componentsHooks = {
+                        charts: {},
+                        cards: {},
+                        tables: {}
+                    };
                 }
 
                 /*
@@ -127,7 +133,9 @@ module.exports = angular.module('abstractService', [])
                 }
 
                 /*
+
                     COMPONENTS MANAGEMENT (CARDS, TABLES, CHARTS, etc.)
+
                 */
                 card(name, settings) {
                     return this.component('cards', name, settings)
@@ -177,9 +185,50 @@ module.exports = angular.module('abstractService', [])
                             });
 
                             this[type][name] = settings;
+
+                            this._notifyComponent(type, name, settings, oldValue);
                         }
                     }
 
+                }
+
+                watchComponent(type, name, hook) {
+                    try {
+                        hook.$destroy = () => this.removeComponentHook(type, name, hook);
+                        hook.$ping = () => {
+                            hook(this[type][name], this[type][name]);
+                            return hook;
+                        };
+                        if (!this.$componentsHooks[type][name])
+                            this.$componentsHooks[type][name] = [];
+                        this.$componentsHooks[type][name].push(hook);
+                    } catch (err) {
+                        $log.error(err);
+                    }
+                    return hook;
+                }
+
+                removeComponentHook(type, name, hook) {
+                    let index = this.$componentsHooks[type][name].indexOf(hook);
+                    this.$componentsHooks[type][name].splice(index, 1);
+                }
+
+                pingComponent(type, name) {
+                    let value = !!this[type][name] ? this[type][name] : null;
+                    return this._notifyComponent(type, name, value, value);
+                }
+
+                _notifyComponent(type, name, value, oldValue) {
+                    let batch = [];
+                    if (!!this.$componentsHooks[type][name])
+                        for (let hook of this.$componentsHooks[type][name]) {
+                            let options = {
+                                $removeHook: () => this.removeComponentHook(type, name, hook)
+                            };
+                            batch.push(hook(value, oldValue, options));
+                        }
+                    return Promise.all(batch)
+                        .catch(err => $log.error(err));
                 }
 
                 updateData(type, name) {
@@ -190,6 +239,9 @@ module.exports = angular.module('abstractService', [])
                         .then(response => {
                             this[type][name].data = response.data;
                             this[type][name].updatedAt = moment().format();
+
+                            //ping component
+                            this.pingComponent(type, name);
                         })
                         .catch(err => $log.error(err))
                 }

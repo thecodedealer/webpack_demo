@@ -11,7 +11,7 @@ module.exports = angular.module('timeService', [])
 
                 fromNow(date) {
 
-                    return moment(date).fromNow(new Date())
+                    return moment(date).fromNow()
                 }
 
             }

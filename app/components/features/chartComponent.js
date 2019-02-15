@@ -22,9 +22,16 @@ module.exports = angular.module('chartComponent', [])
                     chart.updateFn()
                         .then(() => {
                             const ctx = document.getElementById(jID);
-                            new Chart(ctx, chartService.getChartConfig(chart.type, chart.fields, chart.data));
-                        });
+                            let chartInstance = new Chart(ctx, chartService.getChartConfig(chart.type, chart.fields, chart.data));
 
+                            /*
+                               WATCH AFTER DATA CHANGES -> UPDATE CHART
+                            */
+                            this.service.watchComponent('charts', this.name, (value, oldVal) => {
+                                chartInstance.data.datasets[0].data = value.data;
+                                chartInstance.update();
+                            });
+                        });
                 }
 
             }],
@@ -37,6 +44,7 @@ module.exports = angular.module('chartComponent', [])
                   
                 <!-- Body -->  
                 <div class="card-body">
+                
                   <!-- Area chart -->
                   <canvas ng-if="chart.type === 'area'" id="{{jID}}" width="100%" height="30"></canvas>
                   <!-- Bars chart -->

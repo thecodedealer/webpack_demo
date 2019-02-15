@@ -34,7 +34,8 @@ module.exports = angular.module('dashboardComponent', [])
                         description: "",
                         options: {},
                         fields: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
-                        api: '/getTestChart'
+                        api: '/getTestChart',
+                        autoUpdate: 0
                     });
 
                     dashboardService.chart('test-bars', {
