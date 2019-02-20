@@ -60,7 +60,7 @@ module.exports = angular.module('messengerService', [])
 
                     }
 
-                    // logg all
+                    // log all
                     all.push({
                         category: category,
                         type: type,

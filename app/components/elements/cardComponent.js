@@ -36,14 +36,7 @@ module.exports = angular.module('cardComponent', [])
                 </div>
                 
                 <!--Footer-->
-                <div class="card-footer clearfix small z-1">
-                    <span class="float-left">
-                        Actualizat cu {{card.updatedAt}}
-                    </span>
-                    <span class="float-right pointed" ng-click="card.updateFn()">
-                        <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
-                    </span>
-                </div>
+                <footer-card component="card" type="card"></footer-card>
               </div>
              
 		`

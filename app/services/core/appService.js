@@ -37,6 +37,14 @@ module.exports = angular.module('appService', [])
 
             }
 
+            submitTest() {
+                console.log(this.form('test-form'))
+            }
+
+            setSubmitted(name) {
+                this.form(name).config.$setSubmitted();
+            }
+
 
         }
 

@@ -112,8 +112,8 @@ module.exports = angular.module('abstractService', [])
                 */
                 createForm(name) {
                     if (name) {
-                        this.forms[name] = {};
-                        $log.log('Created new form: ' + name)
+                        $log.log('Created new form: ' + name);
+                        return this.forms[name] = {};
                     } else
                         $log.warn('Form name is not defined!')
                 }
@@ -122,11 +122,12 @@ module.exports = angular.module('abstractService', [])
                     if (this.forms[name])
                         return this.forms[name];
                     else
-                        this.createForm(name);
+                        console.warn(`Form [ ${name} ] not found.`)
                 }
 
                 deleteForm(name) {
                     if (this.forms[name]) {
+                        console.log(`Delete form: ${name}`);
                         delete this.forms[name];
                     } else
                         $log.warn('Form ' + name + ' not found!');
@@ -169,7 +170,7 @@ module.exports = angular.module('abstractService', [])
                                 ...settings,
                                 id: name,
                                 updateFn: () => this.updateData(type, name),
-                                data: null,
+                                data: null
                             };
 
                             //resolve interval update
@@ -230,6 +231,7 @@ module.exports = angular.module('abstractService', [])
                     return Promise.all(batch)
                         .catch(err => $log.error(err));
                 }
+
 
                 updateData(type, name) {
                     $log.log(`Update component: ${type} | ${name}`);

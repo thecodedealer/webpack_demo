@@ -9664,5 +9664,16 @@ footer.sticky-footer {
 .pointed {
   cursor: pointer; }
 
+.white-muted {
+  color: #d4d4d4f0; }
+
+.debug {
+  background-color: #373737;
+  color: white;
+  padding: 10px;
+  margin: 20px; }
+  .debug pre {
+    color: white; }
+
 nav a.navActive {
   color: white !important; }

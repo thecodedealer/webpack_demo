@@ -15,6 +15,8 @@ module.exports = angular.module('components', [
     require('./pages/settingsSectionComponent').name,
     require('./pages/ticketsSectionComponent').name,
     require('./pages/archiveSectionComponent').name,
+    require('./pages/formsSectionComponent').name,
+    require('./pages/basicFooterComponent').name,
 
     /*
         Elements
@@ -29,5 +31,7 @@ module.exports = angular.module('components', [
     */
     require('./features/areaChartComponent').name,
     require('./features/dataTablesComponent').name,
-    require('./features/chartComponent').name
+    require('./features/chartComponent').name,
+    require('./features/footerCardComponent').name
+
 ]);

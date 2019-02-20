@@ -39,30 +39,24 @@ module.exports = angular.module('chartComponent', [])
         template: `
               <!-- Area Chart Example-->
               <div class="card ">
-                <div class="card-header">
-                  <i class="fa fa-{{chart.type}}-chart"></i> {{chart.title}}</div>
-                  
-                <!-- Body -->  
-                <div class="card-body">
+                    <div class="card-header">
+                      <i class="fa fa-{{chart.type}}-chart"></i> {{chart.title}}</div>
+                      
+                    <!-- Body -->  
+                    <div class="card-body">
+                    
+                      <!-- Area chart -->
+                      <canvas ng-if="chart.type === 'area'" id="{{jID}}" width="100%" height="30"></canvas>
+                      <!-- Bars chart -->
+                      <canvas ng-if="chart.type === 'bar'" id="{{jID}}" width="100" height="30"></canvas>
+                      <!-- Pie chart -->
+                      <canvas ng-if="chart.type === 'pie'" id="{{jID}}" width="100" height="50"></canvas>
+                      
+                    </div>
+                    
+                    <!--Footer-->
+                    <footer-card component="chart" type="chart"></footer-card>
                 
-                  <!-- Area chart -->
-                  <canvas ng-if="chart.type === 'area'" id="{{jID}}" width="100%" height="30"></canvas>
-                  <!-- Bars chart -->
-                  <canvas ng-if="chart.type === 'bar'" id="{{jID}}" width="100" height="30"></canvas>
-                  <!-- Pie chart -->
-                  <canvas ng-if="chart.type === 'pie'" id="{{jID}}" width="100" height="50"></canvas>
-                  
-                </div>
-                
-                <!--Footer-->
-                <div class="card-footer text-muted clearfix small z-1">
-                    <span class="float-left">
-                        Actualizat cu {{chart.updatedAt}}
-                    </span>
-                    <span class="float-right pointed" ng-click="chart.updateFn()">
-                        <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
-                    </span>
-                </div>
               </div>
 
 		`

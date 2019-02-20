@@ -54,6 +54,21 @@
   cursor: pointer;
 }
 
+.white-muted {
+  color: #d4d4d4f0;
+}
+
+.debug {
+  background-color: #373737;
+  color: white;
+  padding: 10px;
+  margin: 20px;
+
+  pre {
+    color: white;
+  }
+}
+
 //.breadcrumb {
 //  margin-top: 30px;
 //}

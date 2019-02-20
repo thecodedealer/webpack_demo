@@ -13,6 +13,10 @@ module.exports = angular.module('breadcrumbsComponent', [])
                 $scope.navigationService = navigationService;
 
                 this.$onInit = () => {
+                    //On state change
+                    appService.onStateChange('currentState', () => {
+                        navigationService.updateBreadcrumbs();
+                    });
                 };
 
             }],

@@ -28,6 +28,7 @@ require('angular');
 require('angular-ui-router');
 require('angular-route');
 require('angular-resource');
+require('angular-cookie');
 
 
 /*
@@ -40,6 +41,7 @@ window.app = angular.module('startupApp', [
     'ui.router',
     'ngRoute',
     'ngResource',
+    'ipCookie',
 
     /*
         VENDORS
@@ -66,8 +68,9 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService, messengerService, moment) => {
-        console.log('- App is running...');
+    .run(($transitions, $state, appService, navigationService, socketService, messengerService, moment, configService) => {
+        console.log('- App start running...');
+        configService.boot();
 
         // socketService.connect();
 
@@ -78,16 +81,13 @@ window.app = angular.module('startupApp', [
         //     messengerService.success(data.message);
         // });
         //
-        // //On route change
-        // $transitions.onSuccess({}, () => {
-        //     let currentState = $state.current.name;
-        //     appService.state('currentState', currentState);
-        //
-        // });
+        //On route change
+        $transitions.onSuccess({}, () => {
+            let currentState = $state.current.name;
+            appService.state('currentState', currentState);
 
-        //On state change
-        appService.onStateChange('currentState', () => {
-            navigationService.updateBreadcrumbs();
         });
+
+
     })
 ;

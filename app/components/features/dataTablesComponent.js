@@ -6,8 +6,10 @@ module.exports = angular.module('dataTablesComponent', [])
             service: '<',
             name: '@'
         },
-        controller: ['$scope', '$timeout', 'appService', 'timeService', 'moment',
-            function ($scope, $timeout, appService, timeService, moment) {
+        controller: ['$rootScope', '$scope', '$timeout', 'appService', 'timeService', 'moment',
+            function ($rootScope, $scope, $timeout, appService, timeService, moment) {
+
+                const scope = $rootScope;
 
                 /*
                     INJECT SERVICES
@@ -23,22 +25,23 @@ module.exports = angular.module('dataTablesComponent', [])
                         $('#test2').DataTable()
                     }, 1000);
 
+
                     const updateTime = () => {
-                        return $scope.time = moment(table.updatedAt).fromNow();
+                        $scope.time = timeService.fromNow(table.updatedAt)
+                        setInterval(() => {
+                            $scope.$digest($scope.time = timeService.fromNow(table.updatedAt))
+                        }, 1000)
                     };
 
                     updateTime();
-                    setInterval(() => {
-                        console.log('update');
-                        $scope.time = updateTime();
-                        console.log($scope.time)
-                    }, 1000)
+
                 };
 
             }],
 
         template: `
              <div class="data-table-section card">
+             
                 <!-- Body -->
                 <table id="test2" class="table table-striped table-bordered" style="width:100%">
                     <thead>
@@ -54,14 +57,7 @@ module.exports = angular.module('dataTablesComponent', [])
                 </table>
                 
                 <!--Footer-->
-                <div class="card-footer text-muted clearfix small z-1">
-                    <span class="float-left">
-                        Actualizat cu {{time}}
-                    </span>
-                    <span class="float-right pointed" ng-click="table.updateFn()">
-                        <i class="fa fa-refresh" aria-hidden="true"> Refresh</i>
-                    </span>
-                </div>
+                <footer-card component="table" type="table"></footer-card>
             </div>
           
 		`

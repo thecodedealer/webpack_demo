@@ -22,6 +22,10 @@ module.exports = angular.module('navigationService', [])
                             logo: 'users',
                             state: 'users'
                         },
+                        'forms': {
+                            logo: 'pencil-square-o',
+                            state: 'forms'
+                        },
                         'tickets': {
                             logo: 'ticket',
                             state: 'tickets'

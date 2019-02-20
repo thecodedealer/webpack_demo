@@ -102,6 +102,18 @@ module.exports = angular.module('routerServiceProvider', [])
                                 }
                             }
                         })
+
+                        .state('forms', {
+                            url: '/forms',
+                            views: {
+                                'main-layout': {
+                                    template: '<main-layout></main-layout>'
+                                },
+                                'content': {
+                                    template: '<forms-section></forms-section>'
+                                }
+                            }
+                        })
                     ;
                     $urlRouterProvider.otherwise('/dashboard');
                 }
