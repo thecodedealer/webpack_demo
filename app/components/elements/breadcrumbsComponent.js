@@ -23,9 +23,8 @@ module.exports = angular.module('breadcrumbsComponent', [])
         template: /*html*/` 
            <ol class="breadcrumb">
                 <li class="breadcrumb-item" ng-repeat="crumb in navigationService.state('breadcrumbs')">
-                    <a ui-sref="{{crumb}}" class="capitalize">{{crumb}}</a>
+                    <a ui-sref="{{crumb.state}}" class="capitalize" ng-class="{'disabled': $last}">{{crumb.name}}</a>
                 </li>
-                <!--<li class="breadcrumb-item active">My Dashboard</li>-->
             </ol>
          
 		`

@@ -3,7 +3,7 @@
 module.exports = angular.module('navigationService', [])
     .factory('navigationService', ['$log', '$location', 'abstractService',
         ($log, $location, abstractService) => {
-            class Navigation extends abstractService{
+            class Navigation extends abstractService {
                 constructor() {
                     super();
 
@@ -11,6 +11,8 @@ module.exports = angular.module('navigationService', [])
                         States
                     */
                     this.state('breadcrumbs', []);
+
+                    this.homeState = 'dashboard';
 
                     //Side nav tabs
                     this.sideNav = {
@@ -60,7 +62,20 @@ module.exports = angular.module('navigationService', [])
                 _createPathArray() {
                     let arr = $location.path().split('/');
                     arr[0] = 'home';
-                    return arr;
+
+                    return arr.map(el => {
+                        const obj = {};
+
+                        obj.name = el;
+
+                        if (this.sideNav[el])
+                            obj.state = this.sideNav[el].state;
+                        else if (el === 'home')
+                            obj.state = this.homeState;
+
+                        return obj;
+                    });
+
                 }
 
                 toggleSideNav() {

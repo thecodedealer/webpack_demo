@@ -34,6 +34,8 @@ module.exports = angular.module('userSectionComponent', [])
                  <br>
                  <button ng-click="testRequest()" class="btn-danger">Send request</button>
                  
+                 <div ui-view="content"></div>
+                 
             </div>
 		`
     });

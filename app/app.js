@@ -68,11 +68,9 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, socketService, messengerService, moment, configService) => {
+    .run(($transitions, $state, appService, navigationService, messengerService, moment, configService) => {
         console.log('- App start running...');
         configService.boot();
-
-        // socketService.connect();
 
         //momentJS config
         moment.locale('ro');

@@ -17,6 +17,7 @@ module.exports = angular.module('components', [
     require('./pages/archiveSectionComponent').name,
     require('./pages/formsSectionComponent').name,
     require('./pages/basicFooterComponent').name,
+    require('./pages/testPageComponent').name,
 
     /*
         Elements

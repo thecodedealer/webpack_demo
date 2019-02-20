@@ -15,15 +15,11 @@ module.exports = angular.module('routerServiceProvider', [])
                                     template: '<main-layout></main-layout>'
                                 }
                             }
-
                         })
 
                         .state('dashboard', {
                             url: '/dashboard',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<dashboard></dashboard>'
                                 }
@@ -33,9 +29,6 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('users', {
                             url: '/users',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<user-section></user-section>'
                                 }
@@ -45,12 +38,8 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('users.all', {
                             url: '/all',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
-                                    templateUrl: './views/second.html',
-                                    controller: 'UsersCtrl'
+                                    template: '<test-page></test-page>'
                                 }
                             }
                         })
@@ -58,9 +47,6 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('logs', {
                             url: '/logs',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<log-section></log-section>'
                                 }
@@ -70,9 +56,6 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('settings', {
                             url: '/settings',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<settings-section></settings-section>'
                                 }
@@ -82,9 +65,6 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('tickets', {
                             url: '/tickets',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<ticket-section></ticket-section>'
                                 }
@@ -94,9 +74,6 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('archive', {
                             url: '/archive',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<archive-section></archive-section>'
                                 }
@@ -106,9 +83,6 @@ module.exports = angular.module('routerServiceProvider', [])
                         .state('forms', {
                             url: '/forms',
                             views: {
-                                'main-layout': {
-                                    template: '<main-layout></main-layout>'
-                                },
                                 'content': {
                                     template: '<forms-section></forms-section>'
                                 }

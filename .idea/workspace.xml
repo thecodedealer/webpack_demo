@@ -2,28 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba011f48-3fc2-4ec5-b83d-840590d1175f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/features/footerCardComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/pages/basicFooterComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/pages/formsSectionComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/pages/testPageComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/core/socket/socketActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/_modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/_modules.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/elements/breadcrumbsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/elements/breadcrumbsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/elements/cardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/elements/cardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/features/chartComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/features/chartComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/features/dataTablesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/features/dataTablesComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/core/abstractService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/abstractService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/core/appService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/appService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/pages/userSectionComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/pages/userSectionComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/_modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/_modules.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/core/configService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/configService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/core/messengerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/messengerService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/core/navigationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/navigationService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/core/routerServiceProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/routerServiceProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/core/socketService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/core/socket/socketService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/styles/partials/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles/partials/_global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/build/app.bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build/app.bundle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/build/app.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/build/app.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,52 +31,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/core/routerServiceProvider.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/pages/formsSectionComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="92" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/core/socketService.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="102">
+              <caret line="6" column="57" lean-forward="true" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+              <folding>
+                <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/pages/basicFooterComponent.js">
+        <entry file="file://$PROJECT_DIR$/app/components/pages/userSectionComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="366">
+              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/_modules.js">
+        <entry file="file://$PROJECT_DIR$/app/services/core/socket/socketService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="68">
+              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -89,31 +73,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-386">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="349">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/mainLayoutComponent.js">
+        <entry file="file://$PROJECT_DIR$/app/services/core/socket/socketActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="103" column="69" lean-forward="true" selection-start-line="103" selection-start-column="69" selection-end-line="103" selection-end-column="69" />
+            <state relative-caret-position="187">
+              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/font-awesome/scss/font-awesome.scss">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/app/components/_modules.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/core/navigationService.js">
+        <entry file="file://$PROJECT_DIR$/app/vendors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/services/core/routerServiceProvider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/pages/testPageComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -166,14 +172,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/services/navigationService.js" />
-        <option value="$PROJECT_DIR$/app/components/elements/settingsSectionComponent.js" />
-        <option value="$PROJECT_DIR$/app/components/pages/ticketsSectionComponent.js" />
         <option value="$PROJECT_DIR$/app/components/pages/archiveSectionComponent.js" />
         <option value="$PROJECT_DIR$/app/services/routerServiceProvider.js" />
         <option value="$PROJECT_DIR$/app/services/authService.js" />
         <option value="$PROJECT_DIR$/app/services/sections/userService.js" />
-        <option value="$PROJECT_DIR$/app/components/pages/userSectionComponent.js" />
         <option value="$PROJECT_DIR$/app/services/core/messagerService.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test.html" />
@@ -203,27 +205,32 @@
         <option value="$PROJECT_DIR$/app/components/features/chartComponent.js" />
         <option value="$PROJECT_DIR$/app/components/elements/cardComponent.js" />
         <option value="$PROJECT_DIR$/app/components/features/footerCardComponent.js" />
-        <option value="$PROJECT_DIR$/app/services/core/configService.js" />
-        <option value="$PROJECT_DIR$/app/components/elements/breadcrumbsComponent.js" />
         <option value="$PROJECT_DIR$/app/services/core/messengerService.js" />
-        <option value="$PROJECT_DIR$/app/services/core/routerServiceProvider.js" />
-        <option value="$PROJECT_DIR$/app/styles/partials/_global.scss" />
-        <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/components/features/debugComponent.js" />
         <option value="$PROJECT_DIR$/app/services/core/abstractService.js" />
         <option value="$PROJECT_DIR$/app/services/core/appService.js" />
-        <option value="$PROJECT_DIR$/app/services/core/navigationService.js" />
         <option value="$PROJECT_DIR$/app/components/pages/formsSectionComponent.js" />
         <option value="$PROJECT_DIR$/app/components/pages/basicFooterComponent.js" />
-        <option value="$PROJECT_DIR$/app/components/_modules.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/app/services/core/navigationService.js" />
+        <option value="$PROJECT_DIR$/app/styles/partials/_global.scss" />
+        <option value="$PROJECT_DIR$/app/components/elements/breadcrumbsComponent.js" />
+        <option value="$PROJECT_DIR$/app/components/pages/testPageComponent.js" />
+        <option value="$PROJECT_DIR$/app/components/_modules.js" />
+        <option value="$PROJECT_DIR$/app/services/core/routerServiceProvider.js" />
+        <option value="$PROJECT_DIR$/app/components/pages/userSectionComponent.js" />
+        <option value="$PROJECT_DIR$/app/services/core/socketService.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/services/core/configService.js" />
+        <option value="$PROJECT_DIR$/app/services/core/socket/socketActions.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-6" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1040" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -241,45 +248,6 @@
               <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpack_demo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webpack_demo" type="b2602c69:ProjectViewProjectNode" />
@@ -311,11 +279,11 @@
       <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\dist" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\app\services\core\socket" />
       <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\app\services\core" />
       <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\app\services\features" />
       <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\app\components\pages" />
       <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\app\components\elements" />
-      <recent name="C:\Users\nicu.grigoras\Desktop\personal\webpack_demo\app\components\charts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -377,12 +345,12 @@
       <workItem from="1544428722623" duration="599000" />
       <workItem from="1548926917013" duration="5272000" />
       <workItem from="1549265669104" duration="16000" />
-      <workItem from="1549265719254" duration="70949000" />
+      <workItem from="1549265719254" duration="76988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297301000" />
+    <option name="totallyTimeSpent" value="303340000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -410,7 +378,7 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32897604" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49736565" weight="0.3188248" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4963119" visible="true" weight="0.12646121" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4963119" visible="true" weight="0.32731137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -491,43 +459,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/services/dataService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/elements/mainLoader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/elements/componentLoader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/build/app.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/sections/userService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/mml3/mathml3-content.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -618,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/vendors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/features/chartService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -690,20 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/core/configService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/elements/breadcrumbsComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/core/cronService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -722,13 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/partials/_global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -773,37 +676,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/font-awesome/scss/font-awesome.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/core/routerServiceProvider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/core/navigationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/core/socketService.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-386">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/mainLayoutComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
@@ -825,17 +697,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/partials/_header.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/partials/_global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/elements/breadcrumbsComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/core/navigationService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/pages/settingsSectionComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/_modules.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        <state relative-caret-position="323">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/pages/testPageComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/core/configService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/pages/userSectionComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/core/socket/socketActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/core/routerServiceProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/vendors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/core/socket/socketService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="102">
+          <caret line="6" column="57" lean-forward="true" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

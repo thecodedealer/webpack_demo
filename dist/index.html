@@ -16,21 +16,17 @@
     <!--Loader-->
     <main-loader></main-loader>
 
-    <!--Views-->
-    <!--<nav ui-view="main-layout" ></nav>-->
+    <!-- Layout -->
     <main-layout></main-layout>
+
     <div  class="content-wrapper">
         <div class="container-fluid">
+            <!-- Breadcrumb -->
             <breadcrumbs></breadcrumbs>
             <!-- View router -->
             <div ui-view="content"></div>
-            <!-- /.container-fluid-->
-            <!-- /.content-wrapper-->
+            <!-- Footer -->
             <basic-footer></basic-footer>
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
             <!-- Logout Modal-->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                  aria-hidden="true">

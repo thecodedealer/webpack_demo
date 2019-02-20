@@ -21,7 +21,7 @@ module.exports = angular.module('socketService', [])
                     this.socket = null;
                     this.receivingActions = {};
                     this.emitingActions = {};
-                    this.socketIoURL = 'http://localhost:3000/';
+                    this.socketIoURL = 'http://localhost:5000/';
                 }
 
                 connect() {
@@ -52,7 +52,7 @@ module.exports = angular.module('socketService', [])
 
                 //Emit action to Socket Server
                 emit(name, action = {}) {
-                    if(this.socket.connected) {
+                    if(this.socket && this.socket.connected) {
                         $log.log('- Emit socket action: [' + name + ']');
                         this.socket.emit(name, action);
                         this._addToStack(name, action, 'emited');
