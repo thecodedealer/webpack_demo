@@ -75,17 +75,11 @@ window.app = angular.module('startupApp', [
         //momentJS config
         moment.locale('ro');
 
-        // socketService.receive('announcements', (data) => {
-        //     messengerService.success(data.message);
-        // });
-        //
         //On route change
         $transitions.onSuccess({}, () => {
             let currentState = $state.current.name;
             appService.state('currentState', currentState);
 
         });
-
-
     })
 ;

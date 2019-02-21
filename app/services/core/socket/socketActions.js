@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('socketActions', [])
-    .factory('socketActions', ['$log', '$window', 'abstractService', 'socket_io', 'moment',
-        ($log, $window, abstractService, socket_io, moment) => {
+    .factory('socketActions', ['$log', '$window', 'abstractService', 'socketService', 'messengerService',
+        ($log, $window, abstractService, socketService, messengerService) => {
 
 
             class SocketActions extends abstractService {
@@ -11,6 +11,18 @@ module.exports = angular.module('socketActions', [])
 
                 }
 
+
+                init() {
+                    this._actions()
+                }
+
+
+                _actions() {
+                    socketService.receive('action', (data) => {
+                        messengerService.success(data.message);
+                    });
+
+                }
             }
 
             return new SocketActions();

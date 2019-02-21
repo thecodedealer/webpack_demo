@@ -21,12 +21,12 @@ module.exports = angular.module('socketService', [])
                     this.socket = null;
                     this.receivingActions = {};
                     this.emitingActions = {};
-                    this.socketIoURL = 'http://localhost:5000/';
+                    this.socketURL = 'http://localhost:5000';
                 }
 
                 connect() {
                     //Connect to Socket IO Server
-                    this.socket = socket_io(this.socketIoURL);
+                    this.socket = socket_io(this.socketURL);
                 }
                 
                 getSocketStatus() {
@@ -34,12 +34,11 @@ module.exports = angular.module('socketService', [])
                         $log.warn('- App is disconnected from Socket Server.');
                     else
                         $log.log('- App is connected to Socket Server.');
-                    // $log.log(this.socket);
                 }
 
                 //Receive actions from Socket Server
                 receive(name, action) {
-                    $log.log('- Watch socket for: [' + name + ']');
+                    $log.log('- Watch socket action for: [' + name + ']');
 
                     // Set Socket IO event for action
                     this.socket.on(name, (data) => {
@@ -54,7 +53,9 @@ module.exports = angular.module('socketService', [])
                 emit(name, action = {}) {
                     if(this.socket && this.socket.connected) {
                         $log.log('- Emit socket action: [' + name + ']');
+                        // Send action
                         this.socket.emit(name, action);
+                        //Log action
                         this._addToStack(name, action, 'emited');
                     }
                     else {

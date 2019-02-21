@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('configService', [])
-    .factory('configService', ['abstractService', 'socketService',
-        (abstractService, socketService) => {
+    .factory('configService', ['abstractService', 'socketService', 'socketActions',
+        (abstractService, socketService, socketActions) => {
 
             class ConfigService extends abstractService {
                 constructor() {
@@ -16,13 +16,17 @@ module.exports = angular.module('configService', [])
 
                 boot() {
                     console.log('- App is booting ...');
+
+                    // Load initial global config
                     this.loadInitialConfig();
                 }
 
                 loadInitialConfig() {
-                    //Load SocketIO
+                    //Connect to SocketIO
                     socketService.connect();
 
+                    // Load socket actions
+                    socketActions.init();
                 }
             }
 

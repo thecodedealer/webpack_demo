@@ -10,6 +10,7 @@ module.exports = angular.module('services', [
     require('./core/routerServiceProvider').name,
     require('./core/navigationService').name,
     require('./core/socket/socketService').name,
+    require('./core/socket/socketActions').name,
     require('./core/messengerService').name,
     require('./core/authService').name,
     require('./core/apiService').name,

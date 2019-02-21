@@ -16,8 +16,9 @@ module.exports = angular.module('dashboardComponent', [])
                         title: "Online users",
                         description: "",
                         options: {},
-                        fields: ['name', 'name2', 'name3', 'name 4'],
-                        api: '/'
+                        fields: ['users'],
+                        endpoint: 'getUsers',
+                        autoUpdate: 30
                     });
 
                     dashboardService.table('test-table', {
@@ -25,7 +26,8 @@ module.exports = angular.module('dashboardComponent', [])
                         description: "",
                         options: {},
                         fields: ['Name', 'Position', 'Office', 'Age', 'Start date', 'Salary'],
-                        api: '/getTestTable'
+                        endpoint: 'getTestTable',
+                        autoUpdate: 0
                     });
 
                     dashboardService.chart('test-area', {
@@ -34,7 +36,7 @@ module.exports = angular.module('dashboardComponent', [])
                         description: "",
                         options: {},
                         fields: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
-                        api: '/getTestChart',
+                        endpoint: 'getTestChart',
                         autoUpdate: 0
                     });
 
@@ -44,7 +46,8 @@ module.exports = angular.module('dashboardComponent', [])
                         description: "",
                         options: {},
                         fields: ["January", "February", "March", "April", "May", "June"],
-                        api: '/getTestBars'
+                        endpoint: 'getTestBars',
+                        autoUpdate: 0
                     });
 
                     dashboardService.chart('test-pie', {
@@ -53,7 +56,8 @@ module.exports = angular.module('dashboardComponent', [])
                         description: "",
                         options: {},
                         fields: ["Blue", "Red", "Yellow", "Green"],
-                        api: '/getTestPie'
+                        endpoint: 'getTestPie',
+                        autoUpdate: 0
                     });
 
                 };

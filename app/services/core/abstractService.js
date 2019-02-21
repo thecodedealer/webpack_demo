@@ -237,7 +237,7 @@ module.exports = angular.module('abstractService', [])
                     $log.log(`Update component: ${type} | ${name}`);
                     const component = this[type][name];
                     //call API
-                    return API.call(component.api).post({fields: component.fields}).$promise
+                    return API.call(component.endpoint).post({fields: component.fields}).$promise
                         .then(response => {
                             this[type][name].data = response.data;
                             this[type][name].updatedAt = moment().format();
