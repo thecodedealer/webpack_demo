@@ -18,7 +18,7 @@ module.exports = angular.module('dashboardComponent', [])
                         options: {},
                         fields: ['users'],
                         endpoint: 'getUsers',
-                        autoUpdate: 30
+                        autoUpdate: 0
                     });
 
                     dashboardService.table('test-table', {

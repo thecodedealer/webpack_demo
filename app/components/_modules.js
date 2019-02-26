@@ -33,6 +33,7 @@ module.exports = angular.module('components', [
     require('./features/areaChartComponent').name,
     require('./features/dataTablesComponent').name,
     require('./features/chartComponent').name,
-    require('./features/footerCardComponent').name
+    require('./features/footerCardComponent').name,
+    require('./modal/elements/modalComponent').name
 
 ]);
