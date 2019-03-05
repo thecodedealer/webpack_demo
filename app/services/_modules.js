@@ -26,6 +26,7 @@ module.exports = angular.module('services', [
     /*
          FEATURES
     */
-    require('./features/chartService').name
+    require('./features/chartService').name,
+    require('./features/popups/popupService').name
 ])
 ;

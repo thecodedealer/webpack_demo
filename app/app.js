@@ -68,12 +68,12 @@ window.app = angular.module('startupApp', [
     /*
         INIT ANGULAR APP
     */
-    .run(($transitions, $state, appService, navigationService, messengerService, moment, configService) => {
+    .run(($transitions, $state, appService, navigationService, messengerService, moment, configService, popupService) => {
         console.log('- App start running...');
         configService.boot();
 
-        //momentJS config
-        moment.locale('ro');
+        popupService.fire();
+
 
         //On route change
         $transitions.onSuccess({}, () => {

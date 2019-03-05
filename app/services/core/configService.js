@@ -23,10 +23,9 @@ module.exports = angular.module('configService', [])
 
                 loadInitialConfig() {
                     //Connect to SocketIO
-                    socketService.connect();
+                    socketService.connect()
+                        .then(socket => socketActions.init(socket))
 
-                    // Load socket actions
-                    socketActions.init();
                 }
             }
 

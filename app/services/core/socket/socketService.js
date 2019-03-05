@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('socketService', [])
-    .factory('socketService', ['$log', '$window', 'abstractService', 'socket_io', 'moment',
-        ($log, $window, abstractService, socket_io, moment) => {
+    .factory('socketService', ['$log', '$window', 'abstractService', 'socket_io', 'moment', 'Promise',
+        ($log, $window, abstractService, socket_io, moment, Promise) => {
         
             let socketMasterLog = [];
             let socketReceivedLog = {};
@@ -27,6 +27,8 @@ module.exports = angular.module('socketService', [])
                 connect() {
                     //Connect to Socket IO Server
                     this.socket = socket_io(this.socketURL);
+
+                    return Promise.resolve(this.socket);
                 }
                 
                 getSocketStatus() {

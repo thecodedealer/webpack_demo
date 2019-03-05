@@ -9,7 +9,10 @@ require('datatables.net-bs4');
 
 module.exports = angular.module('vendors', [])
     .factory('moment', ['$window', $window => {
-        return window.moment = require('moment/min/moment-with-locales.min');
+        const moment = require('moment/min/moment-with-locales.min');
+        //momentJS config
+        moment.locale('ro');
+        return window.moment = moment;
     }])
 
     .factory('socket_io', ['$window', $window => {
@@ -21,5 +24,8 @@ module.exports = angular.module('vendors', [])
     }])
     .factory('Promise', ['$window', $window => {
         return require('bluebird');
+    }])
+    .factory('SweetAlert', ['$window', $window => {
+        return require('sweetalert2');
     }])
 ;
